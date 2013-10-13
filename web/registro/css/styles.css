@@ -1,0 +1,29 @@
+.modal-body{
+    max-height: 700px;
+}
+.leaflet-top .leaflet-control{
+    margin-top: 50px;
+}
+.latlong{
+    display: none;
+}
+
+#ptTimeSelectCntr{
+    z-index: 9999 !important;
+
+}
+.leaflet-popup-content-wrapper {
+    border-bottom-left-radius:2px;
+    border-bottom-right-radius:2px;
+    border-top-left-radius:2px;
+    border-top-right-radius:2px;
+    padding:1px;
+    text-align:left;
+}
+
+.cerrar_sesion{
+    position: absolute;
+    top: 17px;
+    right: 5px;
+    font-size: 11px;
+}
