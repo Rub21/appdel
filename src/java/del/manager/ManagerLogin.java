@@ -4,6 +4,7 @@
  */
 package del.manager;
 
+import del.bean.BUsuario;
 import java.sql.Connection;
 import del.dao.DAOLogin;
 import del.datasource.BDConnecion;
@@ -21,7 +22,7 @@ public class ManagerLogin {
         this.cn = connecion.getConnection();
     }
 
-    public boolean autenticar(String usuario, String password) {
+    public BUsuario autenticar(String usuario, String password) {
         dAOLogin = new DAOLogin(cn);
         return dAOLogin.autenticar(usuario, password);
     }

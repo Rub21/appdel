@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <%
 
-    String usuario = (String) session.getAttribute("user");
+    String usuario = (String) session.getAttribute("usuario");
     if (usuario == null) {
         response.sendRedirect("login_user.jsp");
     } else {
@@ -42,15 +42,15 @@
 
 
 
-                <form  id="formulario" class="modal-body content span6"  method="post"  action="<%=request.getContextPath()%>/SRegistrar_Delincuencia" enctype="multipart/form-data" >
+                <form  id="formulario" class="modal-body content span6"  method="post"  action="<%=request.getContextPath()%>/SRegistrar" enctype="multipart/form-data" >
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 
                 <div class="row">
                     <div class="span4">Registrar Como:</div>
                     <div class="span4">
                         <div class="well"> 
-                            <input type="radio" name="reg_como" value="${user}" checked>${user} &nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="reg_como" value="Anonimo" > Anonimo<br>
+                            <input type="radio" name="reg_como" value="${idusuario}-${usuario}" checked>${usuario} &nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="reg_como" value="${idusuario}-Anonimo" > Anonimo<br>
                         </div>
                     </div>
 
@@ -100,11 +100,11 @@
                 <div class="row latlong">
                     <div class="span4">Latitud <span class="obligatorio">*</span></div>
                     <div class="span4">
-                        <input type="text" name="lat" value=""  id="latitud" placeholder="click en el Mapa" style="width:400px">
+                        <input type="text" name="latitud" value=""  id="latitud" placeholder="click en el Mapa" style="width:400px">
                     </div>
                     <div class="span4">Longitud <span class="obligatorio">*</span> </div>
                     <div class="span4">
-                        <input type="text" name="lon"  id="longitud" placeholder="click en el Mapa" style="width:400px">
+                        <input type="text" name="longitud"  id="longitud" placeholder="click en el Mapa" style="width:400px">
                     </div>
                 </div>
                 <div class="row">

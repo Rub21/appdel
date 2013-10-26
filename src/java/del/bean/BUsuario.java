@@ -12,13 +12,12 @@ public class BUsuario {
 
     String idusuario;
     String nombre;
-
     String Correo;
     String usuario;
     String contrasenia;
     boolean estado;
     int rol;
-    int num_ent ;
+    int num_ent;
 
     public String getIdusuario() {
         return idusuario;
@@ -83,7 +82,5 @@ public class BUsuario {
     public void setNum_ent(int num_ent) {
         this.num_ent = num_ent;
     }
-    
 
-    
 }

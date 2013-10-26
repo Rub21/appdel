@@ -6,7 +6,7 @@
     </context-param>
     <context-param>
         <param-name>url</param-name>
-        <param-value>jdbc:postgresql://localhost:5432/dbappdel</param-value>
+        <param-value>jdbc:postgresql://localhost:5432/dbappdel3</param-value>
     </context-param>
     <context-param>
         <param-name>username</param-name>
@@ -28,6 +28,10 @@
         <servlet-name>SCerrarsesion_users</servlet-name>
         <servlet-class>del.servlet.SCerrarsesion_users</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SRegistrar</servlet-name>
+        <servlet-class>del.servlet.SRegistrar</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SLogin</servlet-name>
         <url-pattern>/SLogin</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>SCerrarsesion_users</servlet-name>
         <url-pattern>/SCerrarsesion_users</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SRegistrar</servlet-name>
+        <url-pattern>/SRegistrar</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

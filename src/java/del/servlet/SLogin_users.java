@@ -4,6 +4,7 @@
  */
 package del.servlet;
 
+import del.bean.BUsuario;
 import del.datasource.BDConnecion;
 import del.manager.ManagerLogin;
 import java.io.IOException;
@@ -38,17 +39,23 @@ public class SLogin_users extends HttpServlet {
             String usuario = request.getParameter("user");
             String password = request.getParameter("password");
 
-            boolean bandera = managerLogin.autenticar(usuario, password);
-                     
-            System.out.println("----" + bandera);
-            if (bandera) {
-                sesion.setAttribute("user", usuario);
+            BUsuario bUsuario = new BUsuario();
+
+            bUsuario = managerLogin.autenticar(usuario, password);
+
+            System.out.println("login uausrio");
+            System.out.println(bUsuario.isEstado());
+            
+            if (bUsuario.isEstado()) {
+
+                sesion.setAttribute("usuario", bUsuario.getUsuario());
+               sesion.setAttribute("idusuario", bUsuario.getIdusuario());
+
                 response.sendRedirect("registro/registrar.jsp");
             } else {
                 sesion.setAttribute("error", "Usuario  y Password Incorectos, vuelva a intentar");
                 response.sendRedirect("registro/login_user.jsp");
             }
-
 
         } finally {
             out.close();
@@ -57,8 +64,7 @@ public class SLogin_users extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
-     * Handles the HTTP
-     * <code>GET</code> method.
+     * Handles the HTTP <code>GET</code> method.
      *
      * @param request servlet request
      * @param response servlet response
@@ -72,8 +78,7 @@ public class SLogin_users extends HttpServlet {
     }
 
     /**
-     * Handles the HTTP
-     * <code>POST</code> method.
+     * Handles the HTTP <code>POST</code> method.
      *
      * @param request servlet request
      * @param response servlet response

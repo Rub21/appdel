@@ -68,7 +68,7 @@
             <a class="brand" href="#">Registre incidencia delincuenciales en Ayacucho</a>
             <div class="nav-collapse collapse">
                 <div  class="nav pull-right" >
-                    <p style="color: #000"> Bienvenido : ${user}</p>
+                    <p style="color: #000"> Bienvenido : ${usuario}</p>
                     <a class="cerrar_sesion" href="${pageContext.request.contextPath}/SCerrarsesion_users">Cerrar Sesion</a>
                 </div>
             </div>

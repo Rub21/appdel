@@ -38,8 +38,8 @@ public class SLogin extends HttpServlet {
             String usuario = request.getParameter("user");
             String password = request.getParameter("password");
 
-            boolean bandera = managerLogin.autenticar(usuario, password);
-
+           // boolean bandera = managerLogin.autenticar(usuario, password);
+/*
             System.out.println("----" + bandera);
             if (bandera) {
                 sesion.setAttribute("user", usuario);
@@ -47,7 +47,7 @@ public class SLogin extends HttpServlet {
             } else {
                 sesion.setAttribute("try", "Usuario  y Password Incorectos, vuelva a intentar");
                 response.sendRedirect("login.jsp");
-            }
+            }*/
 
 
         } finally {
