@@ -27,3 +27,8 @@
     right: 5px;
     font-size: 11px;
 }
+
+
+.leaflet-control-locate {
+  margin-top:5px !important;
+}

@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -44,7 +46,6 @@ public class DAOCrimen {
         return num + 1;
     }
 
-    
     public void registrar(BCrimen b) {
         try {
             String sql = "select registrar_crimen( '" + b.getIdcrimen() + "', '" + b.getTipo() + "'," + b.getFecha() + ",'" + b.getHora() + "','" + b.getDescripcion() + "', '" + b.getDireccion_ref() + "', '" + b.getImagen() + "'," + b.getLatitud() + "," + b.getLongitud() + ",'" + b.getIdusuario() + "','" + b.getUsuario() + "');";
@@ -56,6 +57,40 @@ public class DAOCrimen {
         } catch (SQLException ex) {
             Logger.getLogger(DAOCrimen.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+    }
+
+    public List listacrimenes() {
+        List list = new LinkedList();
+        try {
+            String sql = " SELECT idcrimen, tipo, fecha, hora, descripcion, direccion_ref, imagen, latitud, longitud, idusuario, usuario FROM seleccionar_crimenes;";
+
+            System.out.println("********" + sql);
+            pstmt = cn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+
+                BCrimen bCrimen = new BCrimen();
+
+                bCrimen.setIdcrimen(rs.getString("idcrimen"));
+                bCrimen.setTipo(rs.getString("tipo"));
+                bCrimen.setFecha(rs.getLong("fecha"));
+                bCrimen.setHora(rs.getString("hora"));
+                bCrimen.setDescripcion(rs.getString("descripcion"));
+                bCrimen.setDireccion_ref(rs.getString("direccion_ref"));
+                bCrimen.setLatitud(rs.getDouble("latitud"));
+                bCrimen.setLongitud(rs.getDouble("longitud"));
+                bCrimen.setIdusuario(rs.getString("idusuario"));
+                bCrimen.setUsuario(rs.getString("usuario"));
+
+                list.add(bCrimen);
+            }
+            pstmt.close();
+            rs.close();
+        } catch (SQLException ex) {
+            System.out.println("Error : " + ex);
+        }
+        return list;
 
     }
 

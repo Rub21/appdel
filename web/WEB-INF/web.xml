@@ -32,6 +32,10 @@
         <servlet-name>SRegistrar</servlet-name>
         <servlet-class>del.servlet.SRegistrar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SOptener_crimenes</servlet-name>
+        <servlet-class>del.servlet.SOptener_crimenes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SLogin</servlet-name>
         <url-pattern>/SLogin</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>SRegistrar</servlet-name>
         <url-pattern>/SRegistrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SOptener_crimenes</servlet-name>
+        <url-pattern>/SOptener_crimenes</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

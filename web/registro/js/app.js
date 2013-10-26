@@ -13,16 +13,13 @@ function onMapClick(e) {
     // var latlngStr = "<div id=\'contenconr\'>(<div id=\'lat\'>" + e.latlng.lat.toFixed(5) + '</div>,<div id=\'lon\'>' + e.latlng.lng.toFixed(5) + '</div>)</div>';
     $('#latitud').val(e.latlng.lat.toFixed(5));
     $('#longitud').val(e.latlng.lng.toFixed(5))
-
-
     popup.setLatLng(e.latlng);
     popup.setContent("<a id=\'formid\' href=\'#\' onclick=\'passdata()\'>Registrar Incidente</a>");
     map.openPopup(popup);
 }
 
 function passdata()
-{
-    $('.click').trigger('click');
+{    $('.click').trigger('click');
     $('#popover').css({
         'width': 'auto',
         'height': '100%',
@@ -31,17 +28,17 @@ function passdata()
             return -($(this).width() / 2);
         }
     });
-
-
-
     $('#fecha').val('');
-   $('#hora').val('');
-   $('#descripcion').val('');
-   $('#direcion').val('');
-
-   
-   
+    $('#hora').val('');
+    $('#descripcion').val('');
+    $('#direcion').val('');
 }
 
 
-
+//encuentrame
+// add location control to global name space for testing only
+// on a production site, omit the "lc = "!
+lc = L.control.locate({
+        follow: true,
+        stopFollowingOnDrag: true
+}).addTo(map);

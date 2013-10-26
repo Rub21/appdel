@@ -1,0 +1,94 @@
+body {
+    font-size:12px;
+    padding-top: 0px;
+    padding-bottom: 60px;
+    background: #000;
+
+}
+
+.muted{
+    margin-left: 100px;
+}
+#cabecera{
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100px;
+    z-index: 9;
+    background-color: rgba(114,40,40,0.75);
+}
+/* Custom container */
+#cabecera .container {
+    margin: 0 auto;
+    max-width: 1000px;   
+    padding: 0px;
+
+
+
+}
+#cabecera .container > hr {
+    margin: 0px 0;
+}
+
+
+
+
+/* Customize the navbar links to be fill the entire space of the .navbar */
+.navbar .navbar-inner {
+    padding: 0;
+}
+.navbar .nav {
+    margin: 0;
+    display: table;
+    width: 100%;
+}
+
+.navbar .nav li {
+    display: table-cell;
+    width: 1%;
+    float: none;
+}
+.navbar .nav li a {
+    font-weight: bold;
+    text-align: center;
+    border-left: 1px solid rgba(0,0,0,.75);
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+.navbar .nav li:first-child a {
+    border-left: 0;
+    border-radius: 3px 0 0 3px;
+}
+.navbar .nav li:last-child a {
+    border-right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+
+#map{
+
+    width: 100%;
+    height: 600px;
+    background: #2D2A2A;
+}
+
+.leaflet-left .leaflet-control{
+    /*position: relative;
+    top: 100px;
+    right: -50px;
+    z-index: 989898;*/
+    margin-left: 260px;
+    margin-top: 120px;
+  
+}
+
+
+#busqueda{
+    position: absolute;
+    width: 250px;
+    height: 500px;
+    z-index: 9;
+    top: 100px;
+    left: 3px;
+    background-color: rgba(114,40,40,0.75);
+    
+}

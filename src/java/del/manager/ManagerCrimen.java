@@ -9,6 +9,7 @@ import del.bean.BCrimen;
 import del.dao.DAOCrimen;
 import del.datasource.BDConnecion;
 import java.sql.Connection;
+import java.util.List;
 
 
 
@@ -36,6 +37,12 @@ public class ManagerCrimen {
     public void registrar(BCrimen bCrimen) {
         dAOCrimen = new DAOCrimen(cn);
         dAOCrimen.registrar(bCrimen);
+    }
+
+    public List listacrimenes() {
+        System.out.println("rrrrrrrrrrrr");
+        dAOCrimen = new DAOCrimen(cn);
+        return dAOCrimen.listacrimenes(); 
     }
     
 

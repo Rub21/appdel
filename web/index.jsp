@@ -6,45 +6,58 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <script src="http://leaflet.cloudmade.com/dist/leaflet.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="http://leaflet.cloudmade.com/dist/leaflet.css" />
+        <meta charset="utf-8">
+        <title>Template &middot; Bootstrap</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link href="lib/bootstrap.css" rel="stylesheet">
+        <link href="lib/bootstrap-responsive.css" rel="stylesheet">
+        <link href="lib/mapbox.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="../assets/js/html5shiv.js"></script>
+        <![endif]-->
+
     </head>
+
     <body>
-        <div id='map' style='height:400px;width:500px;'></div>
-        <div id='actions'><a href='#'>Find me!</a></div>
+        <div id="cabecera">
+            <div class="masthead">
+                <h3 class="muted">Ayacucho Seguro</h3>
+                <div class="navbar navbar-inverse">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <ul class="nav">
+                                <li class="active"><a href="#">Inicio</a></li>
+                                <li><a href="#">Robos </a></li>
+                                <li><a href="#">Asaltos</a></li>
+                                <li><a href="#">Downloads</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- /.navbar -->
+            </div>
+        </div>
+
+        <div id="map"></div>
+        <div id="busqueda">
+            
+        </div>
+        
+       
+
+        <script src="lib/jquery-1.8.2.js"></script>
+        <script src="lib/bootstrap.min.js"></script>
+        <script src="lib/mapbox.js"></script>
+        <script src="js/app.js"></script>
+
     </body>
-    <script>
-
-        function initMap() {
-            var options = {center: new L.LatLng(51.930156, 7.189230), zoom: 7};
-
-            var osmUrl = 'http://a.tiles.mapbox.com/v3/ruben.map-tlseskm0/{z}/{x}/{y}.png',
-                    osmAttribution = 'Map data &copy; 2012 OpenStreetMap contributors',
-                    osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttribution});
-
-            var mapLayer = new L.TileLayer(osmUrl);
-
-            this.map = new L.Map('map', options).addLayer(mapLayer);
-        }
-
-        function locateUser() {
-            this.map.locate({setView: true});
-        }
-
-        var map = null;
-
-        initMap();
-
-        $('#actions').on('click', function() {
-            locateUser();
-        });
-
-
-
-
-
-
-    </script>
 </html>

@@ -26,6 +26,10 @@
     <![endif]-->
     <link rel="stylesheet" href="../lib/jquery.ptTimeSelect.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    
+    <!--CSS para Localizacion-->
+   
+    <link rel="stylesheet" href="../lib/location/L.Control.Locate.css" />
 
 </head>
 <body>
@@ -133,6 +137,9 @@
 <script type="text/javascript" src="../lib/bootstrap.min.js"></script>
 <script type="text/javascript" src="../lib/jquery.ptTimeSelect.js"></script>
 <!--<script type="text/javascript" src="../lib/validate.js"></script>-->
+
+<!--librerias para localizarme-->
+<script type="text/javascript" src="../lib/location/L.Control.Locate.js"></script>
 
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/form.js"></script>
