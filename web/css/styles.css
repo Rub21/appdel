@@ -89,6 +89,13 @@ body {
     z-index: 9;
     top: 100px;
     left: 3px;
-    background-color: rgba(114,40,40,0.75);
+    padding: 10px;
+   // background-color: rgba(114,40,40,0.75);
+  background-color: rgba(0,0,0,0.75);
+  // background: #ffffff;
     
 }
+
+
+
+

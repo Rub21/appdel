@@ -1,8 +1,46 @@
-var map = L.mapbox.map('map', 'ruben.mapa_seguridadciudadana').setView([-13.16040, -74.22638], 15);
+var map = L.mapbox.map('map', 'ruben.mapa_seguridadciudadana')
+        .setView([-13.1624, -74.2159], 15);
+var markers = new L.MarkerClusterGroup();
 
-/*var fullscreenControl = new L.Control.Fullscreen();
- fullscreenControl.addTo(map);*/
-L.control.scale().addTo(map);
 
-/*var minimap = new L.Control.MiniMap(L.mapbox.tileLayer('ruben.map-5m93f3zc'));
-minimap.addTo(map);*/
+for (var i = 0; i < crimenes.length; i++) {
+
+    console.log(crimenes[i]);
+
+    var idcrimen = crimenes[i].idcrimen;
+    var title = crimenes[i].tipo;
+    var imagen = "crimen_imagenes/" + crimenes[i].imagen;
+
+    var marker_simbol = 'post';
+    var marker = L.marker(new L.LatLng(crimenes[i].latitud, crimenes[i].longitud), {
+        icon: L.mapbox.marker.icon({'marker-symbol': marker_simbol, 'marker-color': '456789'}),
+        title: title,
+        imagen: imagen
+
+    });
+    //marker.bindPopup(title);
+    marker.bindPopup("<h2>" + title + "</h2><img class='img-popup' src=" + imagen + "><br>" + '<a href="#detail" onclick="fun_detalle(\'' + idcrimen + '\')"> Más Detalle</a>');
+    markers.addLayer(marker);
+}
+
+map.addLayer(markers);
+
+
+
+
+
+
+$(document).on('ready', function() {
+
+    //mostrara detalle de delincuencia
+
+    $('.click').click(function() {
+    });
+
+
+
+
+
+
+});
+

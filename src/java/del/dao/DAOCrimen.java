@@ -78,6 +78,7 @@ public class DAOCrimen {
                 bCrimen.setHora(rs.getString("hora"));
                 bCrimen.setDescripcion(rs.getString("descripcion"));
                 bCrimen.setDireccion_ref(rs.getString("direccion_ref"));
+                bCrimen.setImagen(rs.getString("imagen"));
                 bCrimen.setLatitud(rs.getDouble("latitud"));
                 bCrimen.setLongitud(rs.getDouble("longitud"));
                 bCrimen.setIdusuario(rs.getString("idusuario"));

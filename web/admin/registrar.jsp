@@ -26,9 +26,9 @@
     <![endif]-->
     <link rel="stylesheet" href="../lib/jquery.ptTimeSelect.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    
+
     <!--CSS para Localizacion-->
-   
+
     <link rel="stylesheet" href="../lib/location/L.Control.Locate.css" />
 
 </head>
