@@ -22,6 +22,7 @@ public class BCrimen {
     double latitud;
     double longitud;
     String imagen;
+    boolean estado;
 
     public String getUsuario() {
         return usuario;
@@ -30,7 +31,6 @@ public class BCrimen {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
-    
 
     public long getFecha() {
         return fecha;
@@ -40,9 +40,6 @@ public class BCrimen {
         this.fecha = fecha;
     }
 
-
-
-    
     public String getImagen() {
         return imagen;
     }
@@ -66,7 +63,6 @@ public class BCrimen {
     public void setLongitud(double longitud) {
         this.longitud = longitud;
     }
-    
 
     public String getIdcrimen() {
         return idcrimen;
@@ -75,8 +71,6 @@ public class BCrimen {
     public void setIdcrimen(String idcrimen) {
         this.idcrimen = idcrimen;
     }
-
-
 
     public String getIdusuario() {
         return idusuario;
@@ -117,6 +111,14 @@ public class BCrimen {
     public void setDireccion_ref(String direccion_ref) {
         this.direccion_ref = direccion_ref;
     }
-    
 
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    
 }

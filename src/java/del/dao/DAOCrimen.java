@@ -48,7 +48,7 @@ public class DAOCrimen {
 
     public void registrar(BCrimen b) {
         try {
-            String sql = "select registrar_crimen( '" + b.getIdcrimen() + "', '" + b.getTipo() + "'," + b.getFecha() + ",'" + b.getHora() + "','" + b.getDescripcion() + "', '" + b.getDireccion_ref() + "', '" + b.getImagen() + "'," + b.getLatitud() + "," + b.getLongitud() + ",'" + b.getIdusuario() + "','" + b.getUsuario() + "');";
+            String sql = "select registrar_crimen( '" + b.getIdcrimen() + "', '" + b.getTipo() + "'," + b.getFecha() + ",'" + b.getHora() + "','" + b.getDescripcion() + "', '" + b.getDireccion_ref() + "', '" + b.getImagen() + "'," + b.getLatitud() + "," + b.getLongitud()+","+b.isEstado() + ",'" + b.getIdusuario() + "','" + b.getUsuario() + "');";
             System.out.println("SQ=======================:" + sql);
             pstmt = cn.prepareStatement(sql);
             pstmt.executeUpdate();

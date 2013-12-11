@@ -82,27 +82,14 @@
                     </div>
                 </div>
                 <div class="row">                    
-                    <div class="span12"> <button type="submit" class="btn btn-primary" id="button">  Filtrar</button></div>
+                    <div class="span12"> <button type="submit" class="btn btn-primary" id="button_filtrar">  Filtrar</button></div>
 
                 </div>
             </div>
         </div>
 
         <!--Ventana de Detalle de delito
-        
-        
-        descripcion: "ru"
-direccion_ref: "p"
-fecha: 1382504400000
-hora: "1:0 PM"
-idcrimen: "1c"
-idusuario: "1u"
-imagen: "gtg"
-latitud: -13.45
-longitud: -74.56
-tipo: "Robo"
-usuario: "anonimo"
-        
+               
         -->
         <div id="modal">
             <div id="popover" class="modal container hide fade" tabindex="-1">
@@ -165,6 +152,16 @@ usuario: "anonimo"
 
         </div>
 
+        <!--Seccion de estadisticas-->
+
+
+        <div id="estadisticas">
+
+
+
+
+        </div>
+        <!-- fin de secino de estadisticas-->
 
 
         <script src="lib/jquery-1.8.2.js"></script>

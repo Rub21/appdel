@@ -6,7 +6,7 @@
     </context-param>
     <context-param>
         <param-name>url</param-name>
-        <param-value>jdbc:postgresql://localhost:5432/dbappdel3</param-value>
+        <param-value>jdbc:postgresql://localhost:5432/dbappdel</param-value>
     </context-param>
     <context-param>
         <param-name>username</param-name>
@@ -36,6 +36,22 @@
         <servlet-name>SOptener_crimenes</servlet-name>
         <servlet-class>del.servlet.SOptener_crimenes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SOptener_cifras</servlet-name>
+        <servlet-class>del.servlet.SOptener_cifras</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SCifras_robo</servlet-name>
+        <servlet-class>del.servlet.SCifras_robo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SCifras_total_crimen</servlet-name>
+        <servlet-class>del.servlet.SCifras_total_crimen</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SCifras_total_mes</servlet-name>
+        <servlet-class>del.servlet.SCifras_total_mes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SLogin</servlet-name>
         <url-pattern>/SLogin</url-pattern>
@@ -55,6 +71,22 @@
     <servlet-mapping>
         <servlet-name>SOptener_crimenes</servlet-name>
         <url-pattern>/SOptener_crimenes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SOptener_cifras</servlet-name>
+        <url-pattern>/SOptener_cifras</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SCifras_robo</servlet-name>
+        <url-pattern>/SCifras_robo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SCifras_total_crimen</servlet-name>
+        <url-pattern>/SCifras_total_crimen</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SCifras_total_mes</servlet-name>
+        <url-pattern>/SCifras_total_mes</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

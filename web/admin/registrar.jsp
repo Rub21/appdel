@@ -1,10 +1,4 @@
-<%-- 
-    Document   : map
-    Created on : Oct 12, 2013, 8:05:20 AM
-    Author     : ruben
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <%
 
@@ -47,7 +41,7 @@
 
 
                 <form  id="formulario" class="modal-body content span6"  method="post"  action="<%=request.getContextPath()%>/SRegistrar" enctype="multipart/form-data" >
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 
                 <div class="row">
                     <div class="span4">Registrar Como:</div>
@@ -66,10 +60,7 @@
                         <select name='tipo' id='tipo' align="left" >
 
                             <option value='Robo'>Robo</option>
-                            <option value='Intento de Robo'>Intento de Robo</option>
-                            <option value='Agresion'>Agresion</option>
-                            <option value='Agresion'>Homicidio</option>
-                            <option value='Secuestro'>Secuestro</option>
+                            <option value='Agresión'>Agresión</option>                                                    
                             <option value='Accidente'>Accidente</option>
                             <option value='Violencia Familiar'>Violencia Familiar</option>
                             <option value='Otros Incidentes'>Otros Incidentes</option>
@@ -89,7 +80,7 @@
                 </div>
 
                 <div class="row">
-                    <div class="span4">DescripciÃ³n <span class="obligatorio">*</span></div>
+                    <div class="span4">Descripción <span class="obligatorio">*</span></div>
                     <div class="span4">
                         <textarea name="descripcion" rows="4" cols="75"  id="descripcion" style="width:400px" placeholder="Ingrese la descripcion del incidente"></textarea>
                     </div>

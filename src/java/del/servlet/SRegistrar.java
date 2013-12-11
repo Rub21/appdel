@@ -66,6 +66,7 @@ public class SRegistrar extends HttpServlet {
 
         bCrimen.setLatitud(Double.parseDouble(mrequest.getParameter("latitud")));
         bCrimen.setLongitud(Double.parseDouble(mrequest.getParameter("longitud")));
+        bCrimen.setEstado(true);
 
         //optener id y nombre:
         String idusuario_usuario = mrequest.getParameter("reg_como");
@@ -118,7 +119,7 @@ public class SRegistrar extends HttpServlet {
         bCrimen.setImagen(nombreImagen);
 
         managerCrimen.registrar(bCrimen);
-        response.sendRedirect("registro/confirmacion.jsp");
+        response.sendRedirect("admin/confirmacion.jsp");
     }
 
     @Override

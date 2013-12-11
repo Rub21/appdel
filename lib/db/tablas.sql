@@ -22,6 +22,7 @@ CREATE TABLE crimen(
      imagen VARCHAR(60),
      latitud numeric,
      longitud numeric,
+     estado boolean,
      fecharegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP    
  );
 
@@ -55,22 +56,23 @@ CREATE OR REPLACE FUNCTION registrar_crimen(
      imagen VARCHAR(60),
      latitud numeric,
      longitud numeric,
+     estado boolean,
      idusuario  VARCHAR(10),
      usuario varchar(50))     
 RETURNS VOID
 AS $$
 DECLARE
 BEGIN
-	INSERT INTO crimen(idcrimen, tipo, fecha, hora, descripcion, direccion_ref, imagen,latitud, longitud)
-	VALUES (idcrimen, tipo, fecha, hora, descripcion, direccion_ref, imagen,latitud, longitud);
+	INSERT INTO crimen(idcrimen, tipo, fecha, hora, descripcion, direccion_ref, imagen,latitud, longitud,estado)
+	VALUES (idcrimen, tipo, fecha, hora, descripcion, direccion_ref, imagen,latitud, longitud,estado);
 	INSERT INTO usuario_crimen(idusuario,usuario, idcrimen) VALUES (idusuario,usuario, idcrimen);        
 END;
 $$ LANGUAGE plpgsql;
 
---select registrar_crimen( '1c', 'Robo',1382504400000,'1:0 PM','ru', 'p', 'gtg',-13.45,-74.56,'1u','anonimo');
+--select registrar_crimen( '1c', 'Robo',1382504400000,'1:0 PM','ru', 'p', 'gtg',-13.45,-74.56,true,'1u','anonimo');
 
 CREATE OR REPLACE VIEW seleccionar_crimenes AS
-	SELECT c.idcrimen, c.tipo, c.fecha, c.hora, c.descripcion, c.direccion_ref, c.imagen,c.latitud, c.longitud,u.idusuario,uc.usuario
+	SELECT c.idcrimen, c.tipo, c.fecha, c.hora, c.descripcion, c.direccion_ref, c.imagen,c.latitud, c.longitud,c.estado, u.idusuario,uc.usuario 
 	FROM crimen as c 
 	left join usuario_crimen as uc on  uc.idcrimen = c.idcrimen
 	left join usuario as u  on uc.idusuario = u.idusuario		
