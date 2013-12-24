@@ -9,59 +9,18 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Template &middot; Bootstrap</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <link href="lib/bootstrap.css" rel="stylesheet">
-        <link href="lib/bootstrap-responsive.css" rel="stylesheet">
-
-        <link href="css/styles.css" rel="stylesheet">
+        <title>Incidentes Ayacucho</title>
 
 
+        <jsp:include page="plantillas/styles.jspf"></jsp:include>
+            <link href='css/style-map.css' rel='stylesheet' />
 
-        <script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.js'></script>
-        <link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.css' rel='stylesheet' />
+            <script src="http://localhost:8080/appdel/SOptener_crimenes"></script>
 
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-          <script src="../assets/js/html5shiv.js"></script>
-        <![endif]-->
+        </head>
 
-        <link rel="stylesheet" href="css/MarkerCluster.css" />
-        <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
-        <!--[if lte IE 8]>
-          <link rel="stylesheet" href="css/MarkerCluster.Default.ie.css" />
-        <![endif]-->
-        <script src="css/leaflet.markercluster.js"></script>
-
-        <link href='css/style-map.css' rel='stylesheet' />
-
-        <script src="http://localhost:8080/appdel/SOptener_crimenes"></script>
-
-    </head>
-
-    <body>
-        <div id="cabecera">
-            <div class="masthead">
-                <h3 class="muted">Ayacucho Seguro</h3>
-                <div class="navbar navbar-inverse">
-                    <div class="navbar-inner">
-                        <div class="container">
-                            <ul class="nav">
-                                <li class="active"><a href="#">Inicio</a></li>
-                                <li><a href="#">Robos </a></li>
-                                <li><a href="#">Asaltos</a></li>
-                                <li><a href="#">Downloads</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div><!-- /.navbar -->
-            </div>
-        </div>
+        <body>
+        <jsp:include page="plantillas/header.jspf"></jsp:include>
 
         <div id="map"></div>
 

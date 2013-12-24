@@ -98,3 +98,53 @@ select substring(to_timestamp(fecha/1000)::text,0,8) as mes ,puntos_tipo_fecha('
 select tipo, count(*) as cantidad  from crimen GROUP BY  tipo ORDER By tipo ASC;
 
 select substring(to_timestamp(fecha/1000)::text,0,8) as mes , count(*) as cantidad  from crimen GROUP BY  mes ORDER By mes ASC;
+
+
+
+--PARA SACAR PO POLIGONO
+
+select * from crimen 
+select geom from polygon 
+
+--Point(GeomFromText('POINT(9 2)')
+
+select st_geometryfromtext('POINT(' || longitud || ' ' || latitud || ')') from crimen
+select * from crimen
+
+select geom from polygon 
+
+--funcion
+
+CREATE OR REPLACE FUNCTION num_nodes(the_geom geometry)
+RETURNS  int
+AS $$
+DECLARE
+	BEGIN
+		RETURN( SELECT count(crimen.idcrimen)   
+		FROM crimen 
+		WHERE ST_Within(st_geometryfromtext('POINT(' || longitud || ' ' || latitud || ')',4326), the_geom));
+	END;
+$$ LANGUAGE plpgsql;
+
+
+select *from polygon
+
+select ST_AsGeoJSON(geom),ST_AsText(geom),num_nodes(geom) from polygon
+
+
+select gid, ST_AsGeoJSON(geom) as geojson ,num_nodes(geom) as cantidad from polygon
+
+select gid,num_nodes(geom) as cantidad from polygon
+
+
+
+
+
+
+
+
+
+
+
+
+

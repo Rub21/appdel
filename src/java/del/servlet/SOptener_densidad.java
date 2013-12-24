@@ -7,43 +7,48 @@
 package del.servlet;
 
 import com.google.gson.Gson;
-import del.bean.BCifras_totales_mes;
+import del.bean.BDensidad;
 import del.datasource.BDConnecion;
-import del.manager.ManagerCifras;
+import del.manager.ManagerDensidad;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.json.JSONException;
 
 /**
  *
  * @author ruben
  */
-public class SCifras_total_mes extends HttpServlet {
+public class SOptener_densidad extends HttpServlet {
 
-
-    ManagerCifras managerCifras = null;
+    ManagerDensidad managerPolygon = null;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, JSONException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+
         ServletContext ctx = this.getServletConfig().getServletContext();
         BDConnecion conexion = new BDConnecion(ctx);
-        managerCifras = new ManagerCifras(conexion);
+        managerPolygon = new ManagerDensidad(conexion);
 
-        BCifras_totales_mes bCifras_totales_mes = new BCifras_totales_mes();
+        List<BDensidad> list = new LinkedList<BDensidad>();
         try {
-            bCifras_totales_mes = managerCifras.listarcifras_totales_mes();
+            list = managerPolygon.listadensidad();
 
-            System.out.println("---------" + bCifras_totales_mes.toString());
-            String json = new Gson().toJson(bCifras_totales_mes);
+            String json = new Gson().toJson(list);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-            response.getWriter().write("var cif_mes =" + json);
+            response.getWriter().write("var cantidad =" + json);
+
             //response.getWriter().write(json);
         } finally {
             out.close();
@@ -62,7 +67,11 @@ public class SCifras_total_mes extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (JSONException ex) {
+            Logger.getLogger(SOptener_densidad.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -76,7 +85,11 @@ public class SCifras_total_mes extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (JSONException ex) {
+            Logger.getLogger(SOptener_densidad.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
