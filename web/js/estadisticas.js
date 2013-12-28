@@ -124,14 +124,102 @@ function  dibujar_crimen(f) {
 ;
 
 
+
+function  dibujar_tipo_incidente(f) {
+
+    fmeses = f.meses;
+    console.log(fmeses);
+    var rowArray = [];
+    for (var i = 0; i < fmeses.length; i++) {
+        console.log(fmeses[i].mes);
+        console.log(fmeses[i].cantidad);
+
+        rowArray.push([fmeses[i].mes, fmeses[i].cantidad]);
+
+    }
+    ;
+    //console.log(rowArray);
+
+    drawChart();
+
+    function drawChart() {
+
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Mes');
+        data.addColumn('number', 'Num puntos');
+        data.addRows(rowArray);
+        var options = {
+            //height: 200,
+            title: 'Incidente : ' + f.tipo + ", Num incidente total : " + f.inc_total,
+            titleTextStyle: {
+                color: 'black',
+                fontSize: 14},
+            colors: ['#3FAA55'],
+            legend: 'none',
+            hAxis: {
+                title: 'Mes',
+                titleTextStyle: {
+                    color: '#404040',
+                    fontSize: 9
+                },
+                textStyle: {fontSize: 9}
+
+            },
+            vAxis: {
+                title: 'Num de Puntos',
+                titleTextStyle: {
+                    color: '#404040',
+                    fontSize: 9
+                },
+                textStyle: {fontSize: 9}
+            },
+            chartArea: {
+                left: 85,
+                top: 25,
+                width: "600px",
+                height: "250px"
+            }
+        };
+        var chart = new google.visualization.ColumnChart(document.getElementById('tipo_incidente'));
+        chart.draw(data, options);
+    }
+}
+;
 $(document).on('ready', function() {
-
-    /*console.log(cif_mes);
-     console.log(cif_crimen);*/
-
     dibujar_meses(cif_mes.cifras_mes);
     dibujar_crimen(cif_crimen.cifras_crimen);
 
+    dibujar_tipo_incidente(cifras_robo);
+
+//tipo_incidente
+
+//cifras_agresion
+
+    $('#tipo').click(function() {
+        var tipo = $('#tipo').val();
+        console.log(tipo)
+        if (tipo === 'robo') {
+
+            dibujar_tipo_incidente(cifras_robo);
+
+        } else if (tipo === 'agresion') {
+            dibujar_tipo_incidente(cifras_agresion);
+
+        }else if(tipo==="accidente"){
+            dibujar_tipo_incidente(cifras_accidente);
+        }else if(tipo==="violencia_familiar"){
+            dibujar_tipo_incidente(cifras_violencia_familiar);
+        }else if(tipo==="otros"){
+            dibujar_tipo_incidente(cifras_otros_incidentes);
+        }
+
+
+
+    });
 
 
 });
+
+
+

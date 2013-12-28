@@ -108,6 +108,120 @@ public class DAOCifras {
         return bCifras;
     }
 
+    public BCifras_por_crimen listarcifras_accidente() {
+
+        ArrayList<BCifras_por_mes> list_meses = new ArrayList<BCifras_por_mes>();
+        BCifras_por_crimen bCifras = new BCifras_por_crimen();
+        //cantidade crimen total de robo
+        int cant_total = 0;
+
+        try {
+            String sql = "select mes, cantidad from data_accidente";
+
+            System.out.println("********" + sql);
+            pstmt = cn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+
+                BCifras_por_mes bCrimen_Mes = new BCifras_por_mes();
+
+                bCrimen_Mes.setMes(rs.getString("mes"));
+                bCrimen_Mes.setCantidad(rs.getInt("cantidad"));
+
+                cant_total = cant_total + bCrimen_Mes.getCantidad();
+
+                list_meses.add(bCrimen_Mes);
+
+            }
+
+            bCifras.setMeses(list_meses);
+            bCifras.setInc_total(cant_total);
+            bCifras.setTipo("Accidente");
+
+            pstmt.close();
+            rs.close();
+        } catch (SQLException ex) {
+            System.out.println("Error : " + ex);
+        }
+        return bCifras;
+    }
+
+    public BCifras_por_crimen listarcifras_violencia_familiar() {
+
+        ArrayList<BCifras_por_mes> list_meses = new ArrayList<BCifras_por_mes>();
+        BCifras_por_crimen bCifras = new BCifras_por_crimen();
+        //cantidade crimen total de robo
+        int cant_total = 0;
+
+        try {
+            String sql = "select mes, cantidad from data_violencia_familiar";
+
+            System.out.println("********" + sql);
+            pstmt = cn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+
+                BCifras_por_mes bCrimen_Mes = new BCifras_por_mes();
+
+                bCrimen_Mes.setMes(rs.getString("mes"));
+                bCrimen_Mes.setCantidad(rs.getInt("cantidad"));
+
+                cant_total = cant_total + bCrimen_Mes.getCantidad();
+
+                list_meses.add(bCrimen_Mes);
+
+            }
+
+            bCifras.setMeses(list_meses);
+            bCifras.setInc_total(cant_total);
+            bCifras.setTipo("Violencia Familiar");
+
+            pstmt.close();
+            rs.close();
+        } catch (SQLException ex) {
+            System.out.println("Error : " + ex);
+        }
+        return bCifras;
+    }
+
+    public BCifras_por_crimen listarcifras_otros_incidentes() {
+
+        ArrayList<BCifras_por_mes> list_meses = new ArrayList<BCifras_por_mes>();
+        BCifras_por_crimen bCifras = new BCifras_por_crimen();
+        //cantidade crimen total de robo
+        int cant_total = 0;
+
+        try {
+            String sql = "select mes, cantidad from data_otros_incidentes";
+
+            System.out.println("********" + sql);
+            pstmt = cn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+
+                BCifras_por_mes bCrimen_Mes = new BCifras_por_mes();
+
+                bCrimen_Mes.setMes(rs.getString("mes"));
+                bCrimen_Mes.setCantidad(rs.getInt("cantidad"));
+
+                cant_total = cant_total + bCrimen_Mes.getCantidad();
+
+                list_meses.add(bCrimen_Mes);
+
+            }
+
+            bCifras.setMeses(list_meses);
+            bCifras.setInc_total(cant_total);
+            bCifras.setTipo("Otros Incidentes");
+
+            pstmt.close();
+            rs.close();
+        } catch (SQLException ex) {
+            System.out.println("Error : " + ex);
+        }
+        return bCifras;
+    }
+
     public BCifras_totales_crimen listarcifras_totales_crimen() {
 
         //

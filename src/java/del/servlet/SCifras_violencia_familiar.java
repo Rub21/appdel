@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package del.servlet;
 
 import com.google.gson.Gson;
@@ -22,9 +21,9 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ruben
  */
-public class SCifras_robo extends HttpServlet {
+public class SCifras_violencia_familiar extends HttpServlet {
 
-       ManagerCifras managerCifras = null;
+    ManagerCifras managerCifras = null;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,28 +35,19 @@ public class SCifras_robo extends HttpServlet {
 
         BCifras_por_crimen bCifras = new BCifras_por_crimen();
         try {
-            bCifras = managerCifras.listarcifras_robo();
+            bCifras = managerCifras.listarcifras_violencia_familiar();
 
             System.out.println("---------" + bCifras.toString());
             String json = new Gson().toJson(bCifras);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-            response.getWriter().write("var cifras_robo =" +json);
+            response.getWriter().write("var cifras_violencia_familiar =" + json);
             //response.getWriter().write(json);
         } finally {
             out.close();
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

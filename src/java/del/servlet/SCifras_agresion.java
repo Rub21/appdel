@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ruben
  */
-public class SCifras_robo extends HttpServlet {
+public class SCifras_agresion extends HttpServlet {
 
        ManagerCifras managerCifras = null;
 
@@ -36,13 +36,13 @@ public class SCifras_robo extends HttpServlet {
 
         BCifras_por_crimen bCifras = new BCifras_por_crimen();
         try {
-            bCifras = managerCifras.listarcifras_robo();
+            bCifras = managerCifras.listarcifras_agresion();
 
             System.out.println("---------" + bCifras.toString());
             String json = new Gson().toJson(bCifras);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-            response.getWriter().write("var cifras_robo =" +json);
+            response.getWriter().write("var cifras_agresion =" +json);
             //response.getWriter().write(json);
         } finally {
             out.close();

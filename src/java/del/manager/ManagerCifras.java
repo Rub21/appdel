@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package del.manager;
 
 import del.bean.BCifras_por_crimen;
@@ -12,10 +7,7 @@ import del.dao.DAOCifras;
 import del.datasource.BDConnecion;
 import java.sql.Connection;
 
-/**
- *
- * @author ruben
- */
+
 public class ManagerCifras {
 
     DAOCifras dAOCifras;
@@ -39,5 +31,25 @@ public class ManagerCifras {
     public BCifras_totales_mes listarcifras_totales_mes() {
         dAOCifras = new DAOCifras(cn);
         return dAOCifras.listarcifras_totales_mes();
+    }
+
+    public BCifras_por_crimen listarcifras_agresion() {
+        dAOCifras = new DAOCifras(cn);
+        return dAOCifras.listarcifras_agresion();
+    }
+
+    public BCifras_por_crimen listarcifras_accidente() {
+        dAOCifras = new DAOCifras(cn);
+        return dAOCifras.listarcifras_accidente();
+    }
+
+    public BCifras_por_crimen listarcifras_otros_incidentes() {
+        dAOCifras = new DAOCifras(cn);
+        return dAOCifras.listarcifras_otros_incidentes();
+    }
+
+    public BCifras_por_crimen listarcifras_violencia_familiar() {
+        dAOCifras = new DAOCifras(cn);
+        return dAOCifras.listarcifras_violencia_familiar();
     }
 }
