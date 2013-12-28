@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package del.servlet;
 
 import com.google.gson.Gson;
@@ -26,13 +25,13 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class SObtener_puntos_critico extends HttpServlet {
 
- 
-    ManagerPuntos_critico managerPuntos_critico=null;
+    ManagerPuntos_critico managerPuntos_critico = null;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-   ServletContext ctx = this.getServletConfig().getServletContext();
+        ServletContext ctx = this.getServletConfig().getServletContext();
         BDConnecion conexion = new BDConnecion(ctx);
         managerPuntos_critico = new ManagerPuntos_critico(conexion);
 
@@ -43,9 +42,9 @@ public class SObtener_puntos_critico extends HttpServlet {
             String json = new Gson().toJson(list);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-            //response.getWriter().write("var puntos_vigilancia =" + json);
+         response.getWriter().write("var puntos_criticos =" + json);
 
-            response.getWriter().write(json);
+           // response.getWriter().write(json);
         } finally {
             out.close();
         }

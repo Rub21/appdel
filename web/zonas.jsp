@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Zonas de Incidentes</title>
 
         <link rel="stylesheet" href="lib/leaflet.css" />
         <jsp:include page="plantillas/styles.jspf"></jsp:include>
@@ -56,8 +56,7 @@
 
 
         <script src="lib/leaflet.js"></script>
-        <script src="lib/underscore-min.js"></script>
-        underscore-min
+        <script src="lib/underscore-min.js"></script>   
         <script type="text/javascript" src="https://dl.dropboxusercontent.com/u/43116811/ruben/grid_ayac.js"></script>
         <script type="text/javascript" src="http://localhost:8080/appdel/SObtener_densidad"></script>
 

@@ -6,7 +6,7 @@ var markers = new L.MarkerClusterGroup();
 
 for (var i = 0; i < crimenes.length; i++) {
 
-    console.log(crimenes[i]);
+    //console.log(crimenes[i]);
 
     var idcrimen = crimenes[i].idcrimen;
     var title = crimenes[i].tipo;
@@ -31,8 +31,8 @@ $(document).on('ready', function() {
 
 //filtrar
     $('#button_filtrar').click(function() {
-        console.log(map)
-        console.log(markers);
+        /*console.log(map)
+        console.log(markers);*/
 
         markers.setFilter(function(f) {
             return false;

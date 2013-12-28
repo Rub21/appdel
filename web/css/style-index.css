@@ -1,4 +1,4 @@
-body { margin:0; padding:0; }
+
 #map { position:absolute; 
        top:0;
        bottom:0; 
@@ -47,6 +47,13 @@ body { margin:0; padding:0; }
 }
 
 .leaflet-control-zoom{
-    
+
     left: 270px;
+}
+
+
+.leaflet-left .leaflet-control{
+    margin-left: 10px;
+    margin-top: 10px;
+
 }

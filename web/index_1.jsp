@@ -22,6 +22,7 @@
             <link href='css/style-index.css' rel='stylesheet' />            
 
             <script src="http://localhost:8080/appdel/SObtener_crimenes"></script>
+            <script src='http://localhost:8080/appdel/SObtener_puntos_critico'></script>
 
         </head>
 
@@ -127,7 +128,7 @@
 
         <script src="js/detalle.js"></script>
 
-        <script src="js/app.js"></script>
+        <script src="js/app_1.js"></script>
 
     </body>
 </html>
