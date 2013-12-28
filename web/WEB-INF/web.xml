@@ -33,12 +33,12 @@
         <servlet-class>del.servlet.SRegistrar</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SOptener_crimenes</servlet-name>
-        <servlet-class>del.servlet.SOptener_crimenes</servlet-class>
+        <servlet-name>SObtener_crimenes</servlet-name>
+        <servlet-class>del.servlet.SObtener_crimenes</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SOptener_cifras</servlet-name>
-        <servlet-class>del.servlet.SOptener_cifras</servlet-class>
+        <servlet-name>SObtener_densidad</servlet-name>
+        <servlet-class>del.servlet.SObtener_densidad</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>SCifras_robo</servlet-name>
@@ -54,7 +54,27 @@
     </servlet>
     <servlet>
         <servlet-name>SOptener_densidad</servlet-name>
-        <servlet-class>del.servlet.SOptener_densidad</servlet-class>
+        <servlet-class>del.servlet.SObtener_densidad</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SRegistrar_puntos_vigilancia</servlet-name>
+        <servlet-class>del.servlet.SRegistrar_puntos_vigilancia</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SObtener_Puntos_vigilancia</servlet-name>
+        <servlet-class>del.servlet.SObtener_Puntos_vigilancia</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SObtener_puntos_vigilancia</servlet-name>
+        <servlet-class>del.servlet.SObtener_puntos_vigilancia</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SRegistrar_puntos_critico</servlet-name>
+        <servlet-class>del.servlet.SRegistrar_puntos_critico</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SObtener_puntos_critico</servlet-name>
+        <servlet-class>del.servlet.SObtener_puntos_critico</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SLogin</servlet-name>
@@ -73,12 +93,12 @@
         <url-pattern>/SRegistrar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SOptener_crimenes</servlet-name>
-        <url-pattern>/SOptener_crimenes</url-pattern>
+        <servlet-name>SObtener_crimenes</servlet-name>
+        <url-pattern>/SObtener_crimenes</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>SOptener_cifras</servlet-name>
-        <url-pattern>/SOptener_cifras</url-pattern>
+        <servlet-name>SObtener_densidad</servlet-name>
+        <url-pattern>/SObtener_densidad</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SCifras_robo</servlet-name>
@@ -95,6 +115,26 @@
     <servlet-mapping>
         <servlet-name>SOptener_densidad</servlet-name>
         <url-pattern>/SOptener_densidad</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SRegistrar_puntos_vigilancia</servlet-name>
+        <url-pattern>/SRegistrar_puntos_vigilancia</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SObtener_Puntos_vigilancia</servlet-name>
+        <url-pattern>/SObtener_Puntos_vigilancia</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SObtener_puntos_vigilancia</servlet-name>
+        <url-pattern>/SObtener_puntos_vigilancia</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SRegistrar_puntos_critico</servlet-name>
+        <url-pattern>/SRegistrar_puntos_critico</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SObtener_puntos_critico</servlet-name>
+        <url-pattern>/SObtener_puntos_critico</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

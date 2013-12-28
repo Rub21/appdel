@@ -5,27 +5,27 @@
  */
 package del.servlet;
 
-import com.google.gson.Gson;
+import del.bean.BCrimen;
+import del.bean.BPuntos_critico;
 import del.datasource.BDConnecion;
 import del.manager.ManagerCrimen;
+import del.manager.ManagerPuntos_critico;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.LinkedList;
-
-import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author ruben
  */
-public class SOptener_crimenes extends HttpServlet {
+public class SRegistrar_puntos_critico extends HttpServlet {
 
-    ManagerCrimen managerCrimen = null;
+    ManagerPuntos_critico managerPuntos_critico = null;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -33,21 +33,41 @@ public class SOptener_crimenes extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         ServletContext ctx = this.getServletConfig().getServletContext();
+        HttpSession sesion = request.getSession();
         BDConnecion conexion = new BDConnecion(ctx);
-        managerCrimen = new ManagerCrimen(conexion);
+        //manager adn bean
+        managerPuntos_critico = new ManagerPuntos_critico(conexion);
 
-        List list = new LinkedList();
-        try {
-            list = managerCrimen.listacrimenes();
-            System.out.println("---------" + list.toString());
-            String json = new Gson().toJson(list);
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
-           response.getWriter().write("var crimenes ="+json );
-            //response.getWriter().write(json);
-        } finally {
-            out.close();
-        }
+        //optener el ultimo valor de delitos           
+        String idpv = managerPuntos_critico.optener_ultimo() + "pv";//
+        System.out.println("ultimo: " + idpv);
+
+        BPuntos_critico bPuntos_critico = new BPuntos_critico();
+
+                        //optener id y nombre:
+        /*
+         String idusuario_usuario = request.getParameter("idusuario_usuario");
+         int posicion = idusuario_usuario.indexOf("-");
+         String idusuario = idusuario_usuario.substring(0, posicion);
+         String usuario = idusuario_usuario.substring(posicion + 1, idusuario_usuario.length());
+         /*System.out.println("idusuario---" + idusuario);
+         System.out.println("usuario---" + usuario);*/
+        bPuntos_critico.setIdusuario(sesion.getAttribute("idusuario").toString()+"");
+        bPuntos_critico.setUsuario(sesion.getAttribute("usuario").toString()+"");
+
+        System.out.println(bPuntos_critico.getIdusuario());
+        System.out.println(bPuntos_critico.getUsuario());
+
+        bPuntos_critico.setIdpc(idpv);
+        bPuntos_critico.setTipo(request.getParameter("tipo"));
+        bPuntos_critico.setDescripcion(request.getParameter("descripcion"));
+        bPuntos_critico.setDireccion_ref(request.getParameter("direccion"));
+        bPuntos_critico.setLatitud(Double.parseDouble(request.getParameter("latitud")));
+        bPuntos_critico.setLongitud(Double.parseDouble(request.getParameter("longitud")));
+        bPuntos_critico.setEstado(true);
+
+        managerPuntos_critico.registrar(bPuntos_critico);
+        response.sendRedirect("admin/confirmacion.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

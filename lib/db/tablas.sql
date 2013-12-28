@@ -78,3 +78,139 @@ CREATE OR REPLACE VIEW seleccionar_crimenes AS
 	left join usuario as u  on uc.idusuario = u.idusuario		
 
 --select * from seleccionar_crimenes;
+
+
+
+
+
+
+--//////////////////////////////////////////////////////////////////////////////////////////////////Puntos Criticos
+    
+CREATE TABLE puntos_critico(
+     idpc VARCHAR(10) not null primary key,      
+     tipo VARCHAR(30),
+     direccion_ref text,
+     descripcion text,
+     latitud numeric,
+     longitud numeric,
+     estado boolean,
+     fecharegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP    
+ );
+
+
+ create table usuario_puntos_critico(
+	idusuario  VARCHAR(10) ,
+	usuario varchar(50),
+	idpc VARCHAR(10) 
+ )
+
+ alter table usuario_puntos_critico
+add constraint fk_idusuario_usuario
+Foreign key (idusuario)
+references usuario(idusuario);
+
+  alter table usuario_puntos_critico
+add constraint fk_idpc
+Foreign key (idpc)
+references puntos_critico(idpc);
+
+
+--Funcion
+CREATE OR REPLACE FUNCTION registrar_puntos_critico(     
+     idpc VARCHAR(10),      
+     tipo VARCHAR(30),
+     direccion_ref text,
+     descripcion text,
+     latitud numeric,
+     longitud numeric,
+     estado boolean,
+     idusuario  VARCHAR(10),
+     usuario varchar(50))     
+RETURNS VOID
+AS $$
+DECLARE
+BEGIN
+
+	INSERT INTO puntos_critico(idpc, tipo, direccion_ref, descripcion, latitud, longitud, estado)
+	VALUES (idpc, tipo, direccion_ref, descripcion, latitud, longitud, estado);
+	INSERT INTO usuario_puntos_critico(idusuario, usuario, idpc)VALUES (idusuario, usuario, idpc);
+
+	        
+END;
+$$ LANGUAGE plpgsql;
+
+select registrar_puntos_critico( '1pc', 'cirticos','adasd', 'asdasdasd',-13.1507,-74.19917,false,'1u','Ley');
+
+CREATE OR REPLACE VIEW seleccionar_puntos_critico AS
+	SELECT c.idpc, c.tipo, c.descripcion, c.direccion_ref, c.latitud, c.longitud,c.estado, u.idusuario,uc.usuario 
+	FROM puntos_critico as c 
+	left join usuario_puntos_critico as uc on  uc.idpc = c.idpc
+	left join usuario as u  on uc.idusuario = u.idusuario;	
+
+SELECT idpc, tipo, descripcion, direccion_ref, latitud, longitud, estado,idusuario, usuario FROM seleccionar_puntos_critico;
+
+
+
+ --//////////////////////////////////////////////////////////////////////////////////////////////puntos de vigilancia
+     
+CREATE TABLE puntos_vigilancia(
+     idpv VARCHAR(10) not null primary key,      
+     tipo VARCHAR(30),
+     direccion_ref text,
+     descripcion text,
+     latitud numeric,
+     longitud numeric,
+     estado boolean,
+     fecharegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP    
+ );
+
+
+ create table usuario_puntos_vigilancia(
+	idusuario  VARCHAR(10) ,
+	usuario varchar(50),
+	idpv VARCHAR(10) 
+ )
+
+ alter table usuario_puntos_vigilancia
+add constraint fk_idusuario_usuario
+Foreign key (idusuario)
+references usuario(idusuario);
+
+  alter table usuario_puntos_vigilancia
+add constraint fk_idpv
+Foreign key (idpv)
+references puntos_vigilancia(idpv);
+
+--Funcion
+CREATE OR REPLACE FUNCTION registrar_puntos_vigilancia(     
+     idpv VARCHAR(10),      
+     tipo VARCHAR(30),
+     direccion_ref text,
+     descripcion text,
+     latitud numeric,
+     longitud numeric,
+     estado boolean,
+     idusuario  VARCHAR(10),
+     usuario varchar(50))     
+RETURNS VOID
+AS $$
+DECLARE
+BEGIN
+
+	INSERT INTO puntos_vigilancia(idpv, tipo, direccion_ref, descripcion, latitud, longitud, estado)
+	VALUES (idpv, tipo, direccion_ref, descripcion, latitud, longitud, estado);
+	INSERT INTO usuario_puntos_vigilancia(idusuario, usuario, idpv)VALUES (idusuario, usuario, idpv);
+
+	        
+END;
+$$ LANGUAGE plpgsql;
+
+--select registrar_puntos_vigilancia( '1pv', 'werwr','werwer', 'werwe',-13.15066,-74.20913,false,'1u','Ley');
+
+CREATE OR REPLACE VIEW seleccionar_puntos_vigilancia AS
+	SELECT c.idpv, c.tipo, c.descripcion, c.direccion_ref, c.latitud, c.longitud,c.estado, u.idusuario,uc.usuario 
+	FROM puntos_vigilancia as c 
+	left join usuario_puntos_vigilancia as uc on  uc.idpv = c.idpv
+	left join usuario as u  on uc.idusuario = u.idusuario	
+
+SELECT idpv, tipo, descripcion, direccion_ref, latitud, longitud, estado,idusuario, usuario FROM seleccionar_puntos_vigilancia;

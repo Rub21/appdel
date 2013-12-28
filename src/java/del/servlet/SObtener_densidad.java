@@ -27,7 +27,7 @@ import org.json.JSONException;
  *
  * @author ruben
  */
-public class SOptener_densidad extends HttpServlet {
+public class SObtener_densidad extends HttpServlet {
 
     ManagerDensidad managerPolygon = null;
 
@@ -70,7 +70,7 @@ public class SOptener_densidad extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (JSONException ex) {
-            Logger.getLogger(SOptener_densidad.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SObtener_densidad.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -88,7 +88,7 @@ public class SOptener_densidad extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (JSONException ex) {
-            Logger.getLogger(SOptener_densidad.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SObtener_densidad.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

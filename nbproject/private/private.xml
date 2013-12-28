@@ -2,6 +2,37 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/templates/header.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/puntos_vigilancia.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/dao/DAOPuntos_vigilancia.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/dao/DAOPuntos_critico.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SObtener_puntos_vigilancia.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/puntos_critico.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SLogin.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SRegistrar.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SObtener_densidad.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/manager/ManagerPuntos_vigilancia.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/manager/ManagerCrimen.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SCifras_robo.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/bean/BPuntos_critico.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SRegistrar_puntos_vigilancia.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/manager/ManagerLogin.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SLogin_users.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SObtener_crimenes.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/dao/DAOCrimen.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/manager/ManagerDensidad.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SRegistrar_puntos_critico.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/bean/BCrimen.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/index.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/zonas.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/poligon.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/dao/DAODensidad.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/bean/BPuntos_vigilancia.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SObtener_puntos_critico.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/registrar.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/WEB-INF/web.xml</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/manager/ManagerPuntos_critico.java</file>
+        </group>
     </open-files>
 </project-private>

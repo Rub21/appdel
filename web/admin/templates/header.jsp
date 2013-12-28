@@ -67,10 +67,31 @@
             </button>
             <a class="brand" href="#">Registre incidencia delincuenciales en Ayacucho</a>
             <div class="nav-collapse collapse">
+                
+                    <ul class="nav">
+                       <li>
+                           <a  href="registrar.jsp">Incidentes</a>
+                       </li>
+
+                       <li>
+                           <a href="puntos_critico.jsp"  >Puntos críticos</a>
+                       </li>
+                       <li>
+                           <a href="puntos_vigilancia.jsp"   >Puntos de vigilancia</a>
+                       </li>
+
+
+                    </ul>
+                
                 <div  class="nav pull-right" >
-                    <p style="color: #000"> Bienvenido : ${usuario}</p>
+                    <p style="color: #000"> Bienvenido :<spam>${usuario}</spam> </p>
                     <a class="cerrar_sesion" href="${pageContext.request.contextPath}/SCerrarsesion_users">Cerrar Sesion</a>
                 </div>
+                
+               
+                
+                
+                
             </div>
         </div>
     </div>

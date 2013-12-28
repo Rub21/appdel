@@ -8,7 +8,7 @@
                         <li class="active"><a href="index.jsp">Inicio</a></li>
                         <li><a href="zonas.jsp">Zonas </a></li>
                         <li><a href="estadisticas.jsp">Estadisticas</a></li>
-                        <li><a href="#">Downloads</a></li>
+                        <li><a href="p_criticos.jsp">Puntos criticos</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>

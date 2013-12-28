@@ -20,7 +20,7 @@ import java.util.List;
 public class ManagerCrimen {
 
     DAOCrimen dAOCrimen;
-    BCrimen bHotel;
+    BCrimen bCrimen;
     Connection cn = null;
 
     public ManagerCrimen(BDConnecion connecion) {
@@ -40,7 +40,7 @@ public class ManagerCrimen {
     }
 
     public List listacrimenes() {
-        System.out.println("rrrrrrrrrrrr");
+        
         dAOCrimen = new DAOCrimen(cn);
         return dAOCrimen.listacrimenes(); 
     }

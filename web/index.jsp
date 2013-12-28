@@ -15,7 +15,7 @@
         <jsp:include page="plantillas/styles.jspf"></jsp:include>
             <link href='css/style-map.css' rel='stylesheet' />
 
-            <script src="http://localhost:8080/appdel/SOptener_crimenes"></script>
+            <script src="http://localhost:8080/appdel/SObtener_crimenes"></script>
 
         </head>
 
