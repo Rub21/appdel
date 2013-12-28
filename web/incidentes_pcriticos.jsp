@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Incidentes Ayacucho</title>
+        <title>Incidentes VS Puntos Criticos</title>
 
         <link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.css' rel='stylesheet' />
         <script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.js'></script>
@@ -24,6 +24,13 @@
             <script src="http://localhost:8080/appdel/SObtener_crimenes"></script>
             <script src='http://localhost:8080/appdel/SObtener_puntos_critico'></script>
 
+            <style>
+                .leaflet-left .leaflet-control{
+                    margin-left: -250px;
+                    margin-top: 10px;
+
+                }
+            </style>
         </head>
 
         <body>
@@ -31,28 +38,7 @@
 
         <div id="map"></div>
 
-        <div id="busqueda">
-            <div class="content well">
-                <h4>Busqueda de incidentes</h4>
 
-                <div class="row-fluid">                    
-                    <div class="span2">Del:</div>
-                    <div class="span10"> 
-                        <input type="text" name="fecha" value=""  id="fecha_inicio" style="width: 150px"  >
-                    </div>
-                </div>
-                <div class="row-fluid">                    
-                    <div class="span2">Al:</div>
-                    <div class="span10"> 
-                        <input type="text" name="fecha" value=""  id="fecha_fin" style="width: 150px">
-                    </div>
-                </div>
-                <div class="row">                    
-                    <div class="span12"> <button type="submit" class="btn btn-primary" id="button_filtrar">  Filtrar</button></div>
-
-                </div>
-            </div>
-        </div>
 
         <!--Ventana de Detalle de delito
                
@@ -119,6 +105,10 @@
         </div>
 
 
+        <div class="footer">
+
+        </div>
+
 
 
 
@@ -128,7 +118,7 @@
 
         <script src="js/detalle.js"></script>
 
-        <script src="js/app_1.js"></script>
+        <script src="js/app_incidentes_pcriticos.js"></script>
 
     </body>
 </html>

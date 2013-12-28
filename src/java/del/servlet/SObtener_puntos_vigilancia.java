@@ -7,10 +7,8 @@
 package del.servlet;
 
 import com.google.gson.Gson;
-import del.bean.BDensidad;
 import del.bean.BPuntos_vigilancia;
 import del.datasource.BDConnecion;
-import del.manager.ManagerDensidad;
 import del.manager.ManagerPuntos_vigilancia;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -44,9 +42,9 @@ public class SObtener_puntos_vigilancia extends HttpServlet {
             String json = new Gson().toJson(list);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-            //response.getWriter().write("var puntos_vigilancia =" + json);
+            response.getWriter().write("var puntos_vigilancia =" + json);
 
-            response.getWriter().write(json);
+           // response.getWriter().write(json);
         } finally {
             out.close();
         }

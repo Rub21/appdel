@@ -79,12 +79,14 @@ body {
     
 }
 
-/*
-.navbar-inner .container{
-    width: 100%;
-    max-width: 100%
-        
-}*/
 
+.footer{
+
+    display: block;
+    width: 100%;    
+    background-color: #000;
+    border-top: 5px solid rgba(114,40,40,0.75);
+    
+}
 
 

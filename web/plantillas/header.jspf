@@ -8,8 +8,8 @@
                         <li class="active"><a href="index.jsp">Incidentes</a></li>
                         <li><a href="zonas.jsp">Zonas </a></li>
                         <li><a href="estadisticas.jsp">Estadisticas</a></li>
-                        <li><a href="p_criticos.jsp">Incidentes Vs Puntos criticos</a></li>
-                        <li><a href="p_criticos.jsp">Incidentes Vs Puntos Vigilancia</a></li>
+                        <li><a href="incidentes_pcriticos.jsp">Incidentes Vs Puntos criticos</a></li>
+                        <li><a href="incidentes_pvigilancia.jsp">Incidentes Vs Puntos Vigilancia</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : estadisticas
-    Created on : Dec 24, 2013, 3:04:12 PM
-    Author     : ruben
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -30,6 +24,12 @@
     </div><!--/row-->
 
 </div><!--/.fluid-container-->
+
+<div class="footer">
+
+</div>
+
+
 <script src="lib/jquery-1.8.2.js"></script>
 <script src="lib/bootstrap.min.js"></script>
 <script src="lib/underscore-min.js"></script>

@@ -3,6 +3,16 @@ var map = L.mapbox.map('map', 'ruben.mapa_seguridadciudadana')
 
 var markers = new L.MarkerClusterGroup();
 
+var myIcon = L.icon({
+    iconUrl: 'https://dl.dropboxusercontent.com/u/43116811/ruben/accidentex20.png',
+    iconSize: [20, 20]
+            /*  iconAnchor: [22, 94],
+             popupAnchor: [-3, -76],
+             shadowUrl: 'my-icon-shadow.png',
+             shadowRetinaUrl: '[email blocked]',
+             shadowSize: [68, 95],
+             shadowAnchor: [22, 94]*/
+});
 
 for (var i = 0; i < crimenes.length; i++) {
 
@@ -15,7 +25,8 @@ for (var i = 0; i < crimenes.length; i++) {
 
     var marker_simbol = 'post';
     var marker = L.marker(new L.LatLng(crimenes[i].latitud, crimenes[i].longitud), {
-        icon: L.mapbox.marker.icon({'marker-symbol': marker_simbol, 'marker-color': '456789'}),
+        // icon: L.mapbox.marker.icon({'marker-symbol': marker_simbol, 'marker-color': '456789'}),
+        icon: myIcon,
         title: title,
         imagen: imagen
 
@@ -32,7 +43,7 @@ $(document).on('ready', function() {
 //filtrar
     $('#button_filtrar').click(function() {
         /*console.log(map)
-        console.log(markers);*/
+         console.log(markers);*/
 
         markers.setFilter(function(f) {
             return false;
