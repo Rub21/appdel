@@ -1,61 +1,116 @@
 var map = L.mapbox.map('map', 'ruben.mapa_seguridadciudadana')
         .setView([-13.1624, -74.2159], 15);
 
-var markers = new L.MarkerClusterGroup();
-
 var myIcon = L.icon({
     iconUrl: 'https://dl.dropboxusercontent.com/u/43116811/ruben/accidentex20.png',
     iconSize: [20, 20]
-            /*  iconAnchor: [22, 94],
-             popupAnchor: [-3, -76],
-             shadowUrl: 'my-icon-shadow.png',
-             shadowRetinaUrl: '[email blocked]',
-             shadowSize: [68, 95],
-             shadowAnchor: [22, 94]*/
 });
+var url_data = 'http://localhost:8080/appdel/SObtener_crimenes';
+var crimenes = {
+    "type": "FeatureCollection",
+    "features": []
+};
 
-for (var i = 0; i < crimenes.length; i++) {
+$.getJSON(url_data, {
+    format: "json"
+}).done(function(data) {
+    $.each(data, function(i, item) {
+        map.markerLayer.on('layeradd', function(e) {
+            var marker = e.layer;
+            var feature = marker.feature;
+            marker.setIcon(myIcon);
+            var popupContent = "<h2>" + feature.properties.tipo + "</h2><p>" + feature.properties.descripcion + "</p>" + '<a href="#detail" onclick="fun_detalle(\'' + feature.properties.idcrimen + '\')"> Más Detalle</a>';
+            marker.bindPopup(popupContent, {
+                closeButton: false,
+                minWidth: 200
+            });
+        });
+        var d = {
+            "geometry": {
+                "type": "Point",
+                "coordinates": [item.longitud, item.latitud]
+            },
+            "type": "Feature",
+            "properties": {
+                descripcion: item.descripcion,
+                direccion_ref: item.direccion_ref,
+                estado: item.estado,
+                fecha: item.fecha,
+                hora: item.hora,
+                idcrimen: item.idcrimen,
+                idusuario: item.idusuario,
+                imagen: item.imagen,
+                latitud: item.latitud,
+                longitud: item.longitud,
+                tipo: item.tipo,
+                usuario: item.usuario
 
-    //console.log(crimenes[i]);
-
-    var idcrimen = crimenes[i].idcrimen;
-    var title = crimenes[i].tipo;
-    var imagen = "crimen_imagenes/" + crimenes[i].imagen;
-    var descripcion = crimenes[i].descripcion;
-
-    var marker_simbol = 'post';
-    var marker = L.marker(new L.LatLng(crimenes[i].latitud, crimenes[i].longitud), {
-        // icon: L.mapbox.marker.icon({'marker-symbol': marker_simbol, 'marker-color': '456789'}),
-        icon: myIcon,
-        title: title,
-        imagen: imagen
-
+            }
+        };
+        crimenes.features.push(d);
     });
-    //marker.bindPopup(title);
-    marker.bindPopup("<h2>" + title + "</h2><p>" + descripcion + "</p>" + '<a href="#detail" onclick="fun_detalle(\'' + idcrimen + '\')"> Más Detalle</a>');
-    markers.addLayer(marker);
-}
 
-map.addLayer(markers);
+    map.markerLayer.setGeoJSON(crimenes);
+
+});
 
 $(document).on('ready', function() {
 
-//filtrar
-    $('#button_filtrar').click(function() {
-        /*console.log(map)
-         console.log(markers);*/
-
-        markers.setFilter(function(f) {
-            return false;
-        });
-
-        /*   _map.markerLayer.setFilter(function(f) {
-         console.log(f)
-         return false;
-         
-         });*/
+//para obtener la fecha en el campo
+    var now = new Date();
+    now = now.getDate() + '/' + now.getMonth() + '/' + now.getFullYear();
+    $('#fecha_inicio').datepicker({
+        dateFormat: 'dd/mm/yy',
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+        dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+        dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+        firstDay: 1,
+        maxDate: new Date(),
+        minDate: '-2y',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+        navigationAsDateFormat: true,
+    });
+    $('#fecha_fin').datepicker({
+        dateFormat: 'dd/mm/yy',
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sabado'],
+        dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+        dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+        firstDay: 1,
+        maxDate: new Date(),
+        minDate: '-2y',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+        navigationAsDateFormat: true,
     });
 
+
+
+//filtrar
+    $('#button_filtrar').click(function() {
+        var fecha_inicio = $('#fecha_inicio').val().split('/');
+        var fecha_fin = $('#fecha_fin').val().split('/');
+        if (fecha_inicio === '' || fecha_fin === '') {
+            alert('Ingrese la fecha.');
+        } else {
+            var time_fi = moment(fecha_inicio[1] + '/' + fecha_inicio[0] + '/' + fecha_inicio[2]).unix() * 1000;
+            var time_ff = moment(fecha_fin[1] + '/' + fecha_fin[0] + '/' + fecha_fin[2]).unix() * 1000;
+            map.markerLayer.setFilter(function(f) {
+                if (f.properties.fecha >= time_fi && f.properties.fecha <= time_ff)
+                {
+                    return true;
+                }
+            });
+        }
+    });
+
+
+    $('#tipo_incidentes li a').click(function() {
+        var id = this.id;
+        map.markerLayer.setFilter(function(f) {
+            return f.properties.tipo === id;
+        });
+    });
 
 
 });

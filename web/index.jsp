@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,6 +8,9 @@
 
         <link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.css' rel='stylesheet' />
         <script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.js'></script>
+        <link rel="stylesheet" href="lib/jquery-ui.css" />
+        <link rel="stylesheet" href="lib/jquery.ptTimeSelect.css" />
+
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
           <script src="../assets/js/html5shiv.js"></script>
@@ -17,6 +21,7 @@
           <link rel="stylesheet" href="css/MarkerCluster.Default.ie.css" />
         <![endif]-->
         <script src="css/leaflet.markercluster.js"></script>
+
 
         <jsp:include page="plantillas/styles.jspf"></jsp:include>
             <link href='css/style-index.css' rel='stylesheet' />            
@@ -37,19 +42,29 @@
                 <div class="row-fluid">                    
                     <div class="span2">Del:</div>
                     <div class="span10"> 
-                        <input type="text" name="fecha" value=""  id="fecha_inicio" style="width: 150px"  >
+                        <input type="text" name="fecha" value=""  id="fecha_inicio" style="width: 150px"  readonly>
                     </div>
                 </div>
                 <div class="row-fluid">                    
                     <div class="span2">Al:</div>
                     <div class="span10"> 
-                        <input type="text" name="fecha" value=""  id="fecha_fin" style="width: 150px">
+                        <input type="text" name="fecha" value=""  id="fecha_fin" style="width: 150px" readonly>
                     </div>
                 </div>
                 <div class="row">                    
                     <div class="span12"> <button type="submit" class="btn btn-primary" id="button_filtrar">  Filtrar</button></div>
 
                 </div>
+            </div>
+            <div class="content well">
+                <h4>Tipos de incidentes</h4>
+                <ul id='tipo_incidentes'>
+                    <li> <a href='#' id='Robo'>Robo</a></li>
+                    <li><a href='#' id='Agresión'>Agresión</a>    </li>                                                
+                    <li> <a href='#' id='Accidente'>Accidente</a>
+                    <li> <a href='#' id='Violencia Familiar'>Violencia Familiar</a></li>
+                    <li> <a href='#' id='Otros Incidentes'>Otros Incidentes</a></li>
+                </ul>
             </div>
         </div>
 
@@ -118,17 +133,22 @@
         </div>
 
         <div class="footer">
-            
+
         </div>
 
 
 
         <script src="lib/jquery-1.8.2.js"></script>
+        <script src="lib/jquery-ui.js"></script>
+        <script  src="lib/jquery.ptTimeSelect.js"></script>
+
         <script src="lib/bootstrap.min.js"></script>
         <script src="lib/underscore-min.js"></script>
+        <script src="lib/moment.min.js"></script>
+
+
 
         <script src="js/detalle.js"></script>
-
         <script src="js/app.js"></script>
 
     </body>

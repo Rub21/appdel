@@ -15,11 +15,15 @@ function fun_detalle(id) {
 
 //Busca el crimen selecionado
     var crimen;
-    _.each(crimenes, function(value, key) {
-        console.log(crimenes[key])
-        if (crimenes[key].idcrimen === id) {
-            crimen = crimenes[key];
+    console.log(crimenes)
+    _.each(crimenes.features, function(value, key) {
+        
+          //console.log(crimenes.features[key].properties)
+        if (crimenes.features[key].properties.idcrimen === id) {
+            crimen = crimenes.features[key];
+              console.log(crimen)
         }
+      
     });
 
 
@@ -33,16 +37,17 @@ function fun_detalle(id) {
     $('.imagen').css('display', 'none');
     $('.imagen').empty();
 
-    $('.tipo').text(crimen.tipo);
-    $('.fecha').text(get_date(crimen.fecha));
-    $('.hora').text(crimen.hora);
-    $('.usuario').text(crimen.usuario);
-    $('.descripcion').text(crimen.descripcion);
-    $('.direccion_ref').text(crimen.direccion_ref);
 
-    if (check_null(crimen.imagen)) {
+    $('.tipo').text(crimen.properties.tipo);
+    $('.fecha').text(get_date(crimen.properties.fecha));
+    $('.hora').text(crimen.properties.hora);
+    $('.usuario').text(crimen.properties.usuario);
+    $('.descripcion').text(crimen.properties.descripcion);
+    $('.direccion_ref').text(crimen.properties.direccion_ref);
+
+    if (check_null(crimen.properties.imagen)) {
         $('.imagen').css('display', 'block');
-        $('.imagen').attr("src", "crimen_imagenes/" + crimen.imagen);
+        $('.imagen').attr("src", "crimen_imagenes/" + crimen.properties.imagen);
     } else {
 
         $('.imagen').css('display', 'none');

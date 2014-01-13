@@ -78,13 +78,13 @@ CREATE OR REPLACE VIEW data_agresion AS
 select * from data_agresion
 
 --Accidente
-CREATE OR REPLACE VIEW data_acidente AS
+CREATE OR REPLACE VIEW data_accidente AS
 	select substring(to_timestamp(fecha/1000)::text,0,8) as mes ,puntos_tipo_fecha('Accidente',substring(to_timestamp(fecha/1000)::text,0,8)) as cantidad
 	from crimen GROUP BY  mes ORDER By mes ASC;
 	
-select * from data_acidente
+select * from data_accidente
 
-select mes, cantidad from data_acidente
+select mes, cantidad from data_accidente
 
 --violencia_familiar
 CREATE OR REPLACE VIEW data_violencia_familiar AS
@@ -92,7 +92,7 @@ CREATE OR REPLACE VIEW data_violencia_familiar AS
 	from crimen GROUP BY  mes ORDER By mes ASC;
 	
 select * from data_violencia_familiar
-
+select mes, cantidad from data_violencia_familiar
 
 --violencia_otros_incidentes
 CREATE OR REPLACE VIEW data_otros_incidentes AS

@@ -43,8 +43,8 @@ public class SObtener_crimenes extends HttpServlet {
             String json = new Gson().toJson(list);
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
-           response.getWriter().write("var crimenes ="+json );
-            //response.getWriter().write(json);
+          //response.getWriter().write("var crimenes ="+json );
+            response.getWriter().write(json);
         } finally {
             out.close();
         }

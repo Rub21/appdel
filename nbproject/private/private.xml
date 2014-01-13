@@ -3,19 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/plantillas/styles.jspf</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/admin_incidentes.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/puntos_vigilancia.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/confirmacion.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/incidentes_pcriticos.jsp</file>
             <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app.js</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/plantillas/header.jspf</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/css/styles.css</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/p_criticos.jsp</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app_p_criticos.js</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/css/style-index.css</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/index_1.jsp</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SObtener_puntos_critico.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/estadisticas.js</file>
             <file>file:/home/ruben/Dropbox/webpages/AppDel/web/index.jsp</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/zonas.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app_incidentes_pvigilancia.js</file>
             <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/detalle.js</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app_1.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/js/app.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/js/form.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app_p_criticos.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/registrar.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SObtener_crimenes.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app_incidentes_pcriticos.js</file>
         </group>
     </open-files>
 </project-private>
