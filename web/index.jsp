@@ -138,9 +138,6 @@
         <script src="lib/bootstrap.min.js"></script>
         <script src="lib/underscore-min.js"></script>
         <script src="lib/moment.min.js"></script>
-
-
-
         <script src="js/detalle.js"></script>
         <script src="js/app.js"></script>
 

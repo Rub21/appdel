@@ -89,4 +89,13 @@ body {
     
 }
 
+.content_registrar_incidente{
+    
+    position: absolute;
+    right: 5px;
+    width: auto;
+    top: 15px;
+    
+}
+
 

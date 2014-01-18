@@ -58,14 +58,16 @@
     .cabecera{
         position: fixed;
         top: 0px;
-        z-index: 1039;
+        z-index: 1038;
         width: 100%;
         height: 30px;
         background: #fff;
-        text-align: center;  
+        text-align: center;
+        padding-top: 5px;
 
     }
     .cabecera a{
+     
         font-size: 20px;
     }
 
@@ -73,7 +75,14 @@
 
 </style>
 <!-- Fixed navbar -->
-<div class="cabecera"> <a class="brand" href="#">Registre incidencia delincuenciales en Ayacucho</a> </div>
+   <a href="../index.jsp" class="button_mapa btn btn-primary">Ver Mapa de Incidentes</a>
+   
+<div class="cabecera"> 
+ 
+    
+    <a class="brand" href="#">Registre incidencia delincuenciales en Ayacucho</a> 
+    
+</div>
 
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">

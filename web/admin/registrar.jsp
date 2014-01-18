@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <%
 
-    String usuario = (String) session.getAttribute("usuario");
-    if (usuario == null) {
+    /*String usuario = (String) request.getSession().getAttribute("usuario");
+    if (null == request.getSession().getAttribute("usuario")) {
         response.sendRedirect("login_user.jsp");
     } else {
         System.out.print("ingreso al a app");
-    }
+    }*/
 
 %>
 <html>
@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="../lib/location/L.Control.Locate.css" />
 
 </head>
+
 <body>
 
     <jsp:include page="templates/header.jsp"></jsp:include>
@@ -117,6 +118,8 @@
         </div>
         <a href="#popover"  class="click"  data-toggle="modal"></a>
     </div>
+
+
 </body>
 
 
