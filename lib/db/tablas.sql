@@ -3,15 +3,22 @@
 	nombre VARCHAR(80) ,
 	apellidos VARCHAR(80) ,
 	usuario varchar(50) NOT NULL unique,
-	contrasenia text not null unique,	
+	contrasenia text not null,	
 	estado boolean not null,
 	fecharegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
  );
 
-INSERT INTO usuario(idusuario, nombre, apellidos, usuario, contrasenia, estado)
-    VALUES ('1u','Leydi Rosmery','Maldonado C.','Ley','1234',true);
+ALTER TABLE usuario ADD rol VARCHAR(2);
 
-    
+INSERT INTO usuario(idusuario, nombre, apellidos, usuario, contrasenia, estado,rol)
+    VALUES ('1u','Leydi Rosmery','Maldonado C.','Ley','1234',true,'RA');
+
+INSERT INTO usuario(idusuario, nombre, apellidos, usuario, contrasenia, estado,rol)
+    VALUES ('2u','Anderson','Espino Alvites','And','123',true,'R-');    
+
+select * from usuario;
+
+
 CREATE TABLE crimen(
      idcrimen VARCHAR(10) not null primary key,      
      tipo VARCHAR(30),

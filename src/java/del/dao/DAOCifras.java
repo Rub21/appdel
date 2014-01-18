@@ -229,7 +229,7 @@ public class DAOCifras {
         ArrayList<BCifras_por_crimen> list_cifras_crimen = new ArrayList<BCifras_por_crimen>();
 
         try {
-            String sql = "select tipo, count(*) as cantidad  from crimen GROUP BY  tipo ORDER By tipo ASC;";
+            String sql = "select tipo, count(*) as cantidad  from crimen WHERE estado = true GROUP BY  tipo ORDER By tipo ASC;";
 
             System.out.println("********" + sql);
             pstmt = cn.prepareStatement(sql);
@@ -263,7 +263,7 @@ public class DAOCifras {
         ArrayList<BCifras_por_mes> list_cifras_mes = new ArrayList<BCifras_por_mes>();
 
         try {
-            String sql = "select substring(to_timestamp(fecha/1000)::text,0,8) as mes , count(*) as cantidad  from crimen GROUP BY  mes ORDER By mes ASC;";
+            String sql = "select substring(to_timestamp(fecha/1000)::text,0,8) as mes , count(*) as cantidad  from crimen WHERE estado = true GROUP BY  mes ORDER By mes ASC;";
 
             System.out.println("********" + sql);
             pstmt = cn.prepareStatement(sql);

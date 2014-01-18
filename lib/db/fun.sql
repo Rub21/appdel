@@ -1,4 +1,4 @@
-﻿S/*ELECT tipo , count(tipo)  FROM crimen GROUP BY tipo;
+﻿/*SELECT tipo , count(tipo)  FROM crimen GROUP BY tipo;
 
 
 SELECT 13456512::date from crimen;
@@ -42,9 +42,6 @@ CREATE OR REPLACE VIEW data_por_mes AS
 	from crimen GROUP BY  mes ORDER By mes ASC;
 select * from data_por_mes
 
-
-
-
 /******************************selecion por tipo y fechapor mes*/
 
 CREATE OR REPLACE FUNCTION puntos_tipo_fecha(_tipo varchar(50),_fecha varchar(50))
@@ -53,12 +50,10 @@ AS $$
 DECLARE
 	_count INTEGER;	
 	BEGIN
-		_count=(select count(*) as day   FROM crimen where substring(to_timestamp(fecha/1000)::text,0,8)=_fecha and tipo=_tipo);	
+		_count=(select count(*) as day   FROM crimen where substring(to_timestamp(fecha/1000)::text,0,8)=_fecha and tipo=_tipo and estado=true);	
 	RETURN _count;
 	END;
 $$ LANGUAGE plpgsql;
-
-
 
 ---Robo
 
@@ -110,9 +105,9 @@ select substring(to_timestamp(fecha/1000)::text,0,8) as mes ,puntos_tipo_fecha('
 
 */
 
-select tipo, count(*) as cantidad  from crimen GROUP BY  tipo ORDER By tipo ASC;
+select tipo, count(*) as cantidad  from crimen WHERE estado = true GROUP BY  tipo ORDER By tipo ASC;
 
-select substring(to_timestamp(fecha/1000)::text,0,8) as mes , count(*) as cantidad  from crimen GROUP BY  mes ORDER By mes ASC;
+select substring(to_timestamp(fecha/1000)::text,0,8) as mes , count(*) as cantidad  from crimen WHERE estado = true GROUP BY  mes ORDER By mes ASC;
 
 
 
@@ -137,7 +132,7 @@ DECLARE
 	BEGIN
 		RETURN( SELECT count(crimen.idcrimen)   
 		FROM crimen 
-		WHERE ST_Within(st_geometryfromtext('POINT(' || longitud || ' ' || latitud || ')',4326), the_geom));
+		WHERE ST_Within(st_geometryfromtext('POINT(' || longitud || ' ' || latitud || ')',4326), the_geom) AND estado=true);
 	END;
 $$ LANGUAGE plpgsql;
 

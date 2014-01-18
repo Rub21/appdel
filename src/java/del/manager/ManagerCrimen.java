@@ -11,8 +11,6 @@ import del.datasource.BDConnecion;
 import java.sql.Connection;
 import java.util.List;
 
-
-
 /**
  *
  * @author ruben
@@ -30,7 +28,7 @@ public class ManagerCrimen {
     public int optener_ultimo() {
         dAOCrimen = new DAOCrimen(cn);
         int ultimo_crimen;
-        ultimo_crimen=dAOCrimen.optener_ultimo();
+        ultimo_crimen = dAOCrimen.optener_ultimo();
         return ultimo_crimen;
     }
 
@@ -40,10 +38,19 @@ public class ManagerCrimen {
     }
 
     public List listacrimenes() {
-        
+
         dAOCrimen = new DAOCrimen(cn);
-        return dAOCrimen.listacrimenes(); 
+        return dAOCrimen.listacrimenes();
     }
-    
+
+    public List listacrimenes_administrar() {
+        dAOCrimen = new DAOCrimen(cn);
+        return dAOCrimen.listacrimenes_administrar();
+    }
+
+    public void actualizar_crimen(String id_crimen) {
+        dAOCrimen = new DAOCrimen(cn);
+        dAOCrimen.actualizar_crimen(id_crimen);
+    }
 
 }

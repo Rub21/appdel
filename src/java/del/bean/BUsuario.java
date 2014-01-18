@@ -16,9 +16,18 @@ public class BUsuario {
     String usuario;
     String contrasenia;
     boolean estado;
-    int rol;
+    String rol;
     int num_ent;
 
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+
+    
     public String getIdusuario() {
         return idusuario;
     }
@@ -67,13 +76,7 @@ public class BUsuario {
         this.estado = estado;
     }
 
-    public int getRol() {
-        return rol;
-    }
-
-    public void setRol(int rol) {
-        this.rol = rol;
-    }
+  
 
     public int getNum_ent() {
         return num_ent;

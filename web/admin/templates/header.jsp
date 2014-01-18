@@ -55,8 +55,26 @@
         font-size: 80%;
     }
 
+    .cabecera{
+        position: fixed;
+        top: 0px;
+        z-index: 1039;
+        width: 100%;
+        height: 30px;
+        background: #fff;
+        text-align: center;  
+
+    }
+    .cabecera a{
+        font-size: 20px;
+    }
+
+
+
 </style>
 <!-- Fixed navbar -->
+<div class="cabecera"> <a class="brand" href="#">Registre incidencia delincuenciales en Ayacucho</a> </div>
+
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
@@ -64,34 +82,34 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="#">Registre incidencia delincuenciales en Ayacucho</a>
+            </button>           
             <div class="nav-collapse collapse">
-                
-                    <ul class="nav">
-                       <li>
-                           <a  href="registrar.jsp">Incidentes</a>
-                       </li>
+                <ul class="nav">
+                    <li>
+                        <a  href="registrar.jsp">Registrar Incidentes</a>
+                    </li>
+                    <%
+                        String rol = (String) request.getSession().getAttribute("rolusuario");
 
-                       <li>
-                           <a href="puntos_critico.jsp"  >Puntos críticos</a>
-                       </li>
-                       <li>
-                           <a href="puntos_vigilancia.jsp"   >Puntos de vigilancia</a>
-                       </li>
+                        if (rol.equals("RA")) {
+                    %>
+                    <li>
+                        <a href="puntos_critico.jsp"  >Puntos críticos</a>
+                    </li>
+                    <li>
+                        <a href="puntos_vigilancia.jsp"   >Puntos de vigilancia</a>
+                    </li>
+                    <li>
+                        <a href="admin_incidentes.jsp"   >Administrar incidentes</a>
+                    </li>
+                    <%}%>
 
+                </ul>
 
-                    </ul>
-                
                 <div  class="nav pull-right" >
                     <p style="color: #000"> Bienvenido :<spam>${usuario}</spam> </p>
                     <a class="cerrar_sesion" href="${pageContext.request.contextPath}/SCerrarsesion_users">Cerrar Sesion</a>
                 </div>
-                
-               
-                
-                
-                
             </div>
         </div>
     </div>

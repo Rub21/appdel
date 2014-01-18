@@ -26,7 +26,5 @@
             </div>
             <div class="span3"></div>
         </div> 
-
-
     </body>
 </html>

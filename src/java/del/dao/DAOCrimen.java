@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package del.dao;
 
 import del.bean.BCrimen;
@@ -48,7 +43,7 @@ public class DAOCrimen {
 
     public void registrar(BCrimen b) {
         try {
-            String sql = "select registrar_crimen( '" + b.getIdcrimen() + "', '" + b.getTipo() + "'," + b.getFecha() + ",'" + b.getHora() + "','" + b.getDescripcion() + "', '" + b.getDireccion_ref() + "', '" + b.getImagen() + "'," + b.getLatitud() + "," + b.getLongitud()+","+b.isEstado() + ",'" + b.getIdusuario() + "','" + b.getUsuario() + "');";
+            String sql = "select registrar_crimen( '" + b.getIdcrimen() + "', '" + b.getTipo() + "'," + b.getFecha() + ",'" + b.getHora() + "','" + b.getDescripcion() + "', '" + b.getDireccion_ref() + "', '" + b.getImagen() + "'," + b.getLatitud() + "," + b.getLongitud() + "," + b.isEstado() + ",'" + b.getIdusuario() + "','" + b.getUsuario() + "');";
             System.out.println("SQ=======================:" + sql);
             pstmt = cn.prepareStatement(sql);
             pstmt.executeUpdate();
@@ -63,9 +58,9 @@ public class DAOCrimen {
     public List listacrimenes() {
         List list = new LinkedList();
         try {
-            String sql = " SELECT idcrimen, tipo, fecha, hora, descripcion, direccion_ref, imagen, latitud, longitud, idusuario, usuario FROM seleccionar_crimenes;";
+            String sql = "SELECT idcrimen, tipo, fecha, hora, descripcion, direccion_ref, imagen, latitud, longitud, idusuario, usuario, estado FROM seleccionar_crimenes WHERE estado=true;";
 
-            System.out.println("********" + sql);
+            //System.out.println("********" + sql);
             pstmt = cn.prepareStatement(sql);
             rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -83,7 +78,7 @@ public class DAOCrimen {
                 bCrimen.setLongitud(rs.getDouble("longitud"));
                 bCrimen.setIdusuario(rs.getString("idusuario"));
                 bCrimen.setUsuario(rs.getString("usuario"));
-
+                bCrimen.setEstado(rs.getBoolean("estado"));
                 list.add(bCrimen);
             }
             pstmt.close();
@@ -92,6 +87,53 @@ public class DAOCrimen {
             System.out.println("Error : " + ex);
         }
         return list;
+
+    }
+
+    public List listacrimenes_administrar() {
+        List list = new LinkedList();
+        try {
+            String sql = "SELECT idcrimen, tipo, fecha, hora, descripcion, direccion_ref, imagen, latitud, longitud, idusuario, usuario, estado FROM seleccionar_crimenes WHERE estado=false;";
+
+            //System.out.println("********" + sql);
+            pstmt = cn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+
+                BCrimen bCrimen = new BCrimen();
+                bCrimen.setIdcrimen(rs.getString("idcrimen"));
+                bCrimen.setTipo(rs.getString("tipo"));
+                bCrimen.setFecha(rs.getLong("fecha"));
+                bCrimen.setHora(rs.getString("hora"));
+                bCrimen.setDescripcion(rs.getString("descripcion"));
+                bCrimen.setDireccion_ref(rs.getString("direccion_ref"));
+                bCrimen.setImagen(rs.getString("imagen"));
+                bCrimen.setLatitud(rs.getDouble("latitud"));
+                bCrimen.setLongitud(rs.getDouble("longitud"));
+                bCrimen.setIdusuario(rs.getString("idusuario"));
+                bCrimen.setUsuario(rs.getString("usuario"));
+                bCrimen.setEstado(rs.getBoolean("estado"));
+                list.add(bCrimen);
+            }
+            pstmt.close();
+            rs.close();
+        } catch (SQLException ex) {
+            System.out.println("Error : " + ex);
+        }
+        return list;
+    }
+
+    public void actualizar_crimen(String id_crimen) {
+
+        try {
+            String sql = "UPDATE crimen SET estado=true WHERE idcrimen='" + id_crimen + "';";
+            System.out.println("SQL" + sql);
+            pstmt = cn.prepareStatement(sql);
+            pstmt.executeUpdate();
+            // pstmt.executeQuery();
+            // conn.commit();
+        } catch (SQLException ex) {
+        }
 
     }
 

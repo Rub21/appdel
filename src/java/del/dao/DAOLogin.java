@@ -30,7 +30,7 @@ public class DAOLogin {
         BUsuario bUsuario = new BUsuario();
         try {
             
-            String sql = "SELECT  contrasenia, idusuario FROM usuario where usuario='" + usuario + "';";
+            String sql = "SELECT  contrasenia, idusuario,rol FROM usuario where usuario='" + usuario + "';";
             
             pstmt = conn.prepareStatement(sql);
             rs = pstmt.executeQuery();
@@ -40,11 +40,10 @@ public class DAOLogin {
                 String contrasenia = rs.getString("contrasenia");
                 if (contrasenia.equals(password)) {
                     bUsuario.setIdusuario(rs.getString("idusuario"));
+                    bUsuario.setRol(rs.getString("rol"));
                     banndera = true;
-                    bUsuario.setEstado(banndera);
-                    
-                }
-                
+                    bUsuario.setEstado(banndera);                    
+                }               
             }
             
             pstmt.close();

@@ -1,63 +1,51 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package del.servlet;
 
-import del.bean.BUsuario;
+import com.google.gson.Gson;
 import del.datasource.BDConnecion;
-import del.manager.ManagerLogin;
+import del.manager.ManagerCrimen;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.LinkedList;
+import java.util.List;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author ruben
  */
-public class SLogin_users extends HttpServlet {
+public class SObtener_crimen_administrar extends HttpServlet {
 
-    ManagerLogin managerLogin = null;
+ 
+    ManagerCrimen managerCrimen = null;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+
         ServletContext ctx = this.getServletConfig().getServletContext();
-        HttpSession sesion = request.getSession();
-        //connecion a base de datos
         BDConnecion conexion = new BDConnecion(ctx);
-        managerLogin = new ManagerLogin(conexion);
+        managerCrimen = new ManagerCrimen(conexion);
+
+        List list = new LinkedList();
         try {
-
-            String usuario = request.getParameter("user");
-            String password = request.getParameter("password");
-
-            BUsuario bUsuario = new BUsuario();
-
-            bUsuario = managerLogin.autenticar(usuario, password);
-
-            System.out.println("login Usuario");
-            System.out.println(bUsuario.isEstado());
-            System.out.println(bUsuario.getRol());
-
-            if (bUsuario.isEstado()) {
-
-                sesion.setAttribute("usuario", bUsuario.getUsuario());
-                sesion.setAttribute("idusuario", bUsuario.getIdusuario());
-                sesion.setAttribute("rolusuario", bUsuario.getRol());
-
-                response.sendRedirect("admin/registrar.jsp");
-            } else {
-                sesion.setAttribute("error", "Usuario  y Password Incorectos, vuelva a intentar");
-                response.sendRedirect("admin/login_user.jsp");
-            }
-
+            list = managerCrimen.listacrimenes_administrar();
+            System.out.println("---------" + list.toString());
+            String json = new Gson().toJson(list);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+          //response.getWriter().write("var crimenes ="+json );
+            response.getWriter().write(json);
         } finally {
             out.close();
         }
@@ -101,4 +89,5 @@ public class SLogin_users extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 }
