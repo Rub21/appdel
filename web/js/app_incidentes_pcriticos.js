@@ -5,6 +5,18 @@ var myIcon = L.icon({
     iconUrl: 'https://dl.dropboxusercontent.com/u/43116811/ruben/accidentex20.png',
     iconSize: [20, 20]
 });
+
+var myIcon_pc = L.icon({
+    iconUrl: 'http://a.tiles.mapbox.com/v3/marker/pin-l-danger+FFFF00.png',
+    iconSize: [35, 90],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -80],
+    //shadowUrl: 'my-icon-shadow.png',
+    //shadowRetinaUrl: '[email blocked]',
+    //shadowSize: [68, 95],
+    //shadowAnchor: [22, 150]
+});
+
 var url_data = 'http://localhost:8080/appdel/SObtener_crimenes';
 var crimenes = {
     "type": "FeatureCollection",
@@ -60,48 +72,29 @@ var geoJson = {
     features: []
 };
 
+for (var i = 0; i < puntos_criticos.length; i++) {
+
+    //console.log(crimenes[i]);
+
+    var idcrimen = puntos_criticos[i].idcrimen;
+    var title = puntos_criticos[i].tipo;
+
+    idpc = puntos_criticos[i].idpc;
+    tipo = puntos_criticos[i].tipo;
+    direccion_ref = puntos_criticos[i].direccion_ref;
+    descripcion = puntos_criticos[i].descripcion;
 
 
+    var marker = L.marker(new L.LatLng(puntos_criticos[i].latitud, puntos_criticos[i].longitud), {
+        icon: myIcon_pc
 
-console.log(puntos_criticos)
-for (i = 0; i < puntos_criticos.length; i++) {
-    var data = {};
 
-    data.type = 'Feature';
-    data.properties = {};
-    data.properties.idpc = puntos_criticos[i].idpc;
-    data.properties.tipo = puntos_criticos[i].tipo;
-    data.properties.direccion_ref = puntos_criticos[i].direccion_ref;
-    data.properties.descripcion = puntos_criticos[i].descripcion;
-    data.properties['marker-symbol'] = "danger";
-    data.properties['marker-color'] = '#E5AC03';
-    data.properties['marker-size'] = 'large';
-
-    data.geometry = {};
-    data.geometry.type = 'Point';
-    data.geometry.coordinates = [puntos_criticos[i].longitud, puntos_criticos[i].latitud];
-
-    console.log(data)
-    geoJson.features.push(data)
-}
-
-map.markerLayer.on('layeradd', function(e) {
-    var marker = e.layer,
-            feature = marker.feature;
-
-    var popupContent = '<h3>' + feature.properties.tipo.toUpperCase() + '</h3>' +
-            '   <p>' + feature.properties.direccion_ref + '</p>';
-
-    marker.bindPopup(popupContent, {
-        closeButton: false,
-        minWidth: 250
     });
-});
 
-// Add features to the map
-map.markerLayer.setGeoJSON(geoJson);
+    marker.bindPopup("<h2>" + tipo + "</h2><p>" + descripcion + "</p>");
 
-
+    map.addLayer(marker);
+}
 
 
 $(document).on('ready', function() {
