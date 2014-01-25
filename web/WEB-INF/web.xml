@@ -104,6 +104,10 @@
         <servlet-name>SObtener_crimen_administrar</servlet-name>
         <servlet-class>del.servlet.SObtener_crimen_administrar</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SNuevousuario</servlet-name>
+        <servlet-class>del.servlet.SNuevousuario</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SLogin</servlet-name>
         <url-pattern>/SLogin</url-pattern>
@@ -191,6 +195,10 @@
     <servlet-mapping>
         <servlet-name>SObtener_crimen_administrar</servlet-name>
         <url-pattern>/SObtener_crimen_administrar</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SNuevousuario</servlet-name>
+        <url-pattern>/SNuevousuario</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

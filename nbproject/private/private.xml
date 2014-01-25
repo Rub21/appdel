@@ -3,23 +3,58 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/admin_incidentes.jsp</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/puntos_vigilancia.jsp</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/confirmacion.jsp</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/incidentes_pcriticos.jsp</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/css/styles.css</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/plantillas/header.jspf</file>
             <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/estadisticas.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/css/leaflet.markercluster-src.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/puntos_critico.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SRegistrar.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/manager/ManagerCrimen.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/css/styles_amin_incidente.css</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app_p_criticos.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SActualizar_incidente.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/js/detalle_admin_incidente.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/nbproject/build-impl.xml</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/templates/style.jspf</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/css/MarkerCluster.css</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/confirmacion.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SRegistrar_puntos_critico.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/css/mapbox.css</file>
             <file>file:/home/ruben/Dropbox/webpages/AppDel/web/index.jsp</file>
             <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app_incidentes_pvigilancia.js</file>
             <file>file:/home/ruben/Dropbox/webpages/AppDel/web/zonas.jsp</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/detalle.js</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/js/app.js</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/js/form.js</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app_p_criticos.js</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/registrar.jsp</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/nbproject/build-impl.xml</file>
-            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SObtener_crimenes.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/dao/DAOCifras.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/dao/DAODensidad.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/manager/ManagerCifras.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/css/leaflet.markercluster.js</file>
             <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app_incidentes_pcriticos.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/templates/header.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/admin_incidentes.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/puntos_vigilancia.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/js/app_admin_incidente.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SCifras_total_mes.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/css/style-index.css</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SLogin.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SObtener_crimen_administrar.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/js/app.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/bean/BUsuario.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/css/MarkerCluster.Default.ie.css</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/login_user.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SRegistrar_puntos_vigilancia.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/manager/ManagerLogin.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SLogin_users.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/js/map.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SObtener_crimenes.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/dao/DAOCrimen.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/plantillas/styles.jspf</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/incidentes_pcriticos.jsp</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/app.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/dao/DAOLogin.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/js/detalle.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/src/java/del/servlet/SCifras_violencia_familiar.java</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/js/form.js</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/css/styles.css</file>
+            <file>file:/home/ruben/Dropbox/webpages/AppDel/web/admin/registrar.jsp</file>
         </group>
     </open-files>
 </project-private>

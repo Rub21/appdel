@@ -77,6 +77,7 @@ public class SRegistrar extends HttpServlet {
          System.out.println("usuario---" + usuario);*/
         bCrimen.setIdusuario(idusuario);
         bCrimen.setUsuario(usuario);
+        bCrimen.setEstado(false);
 
         //convertir fecha string a timestamp
         String fecha = mrequest.getParameter("fecha");

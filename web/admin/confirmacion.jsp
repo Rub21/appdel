@@ -21,6 +21,7 @@
             <div class="span6">
                 <div class="well" >
                     <span style="font-size:18px;">Crimen registrado</span><br><br>
+                    <p>Este incidente sera verifica por el Administrador</p>
                     <input type=button class="btn btn-danger" onClick="location.href = 'registrar.jsp'" value="Registrar otro" style="width:200px; height: 40px;" value='click here'>
                 </div>
             </div>

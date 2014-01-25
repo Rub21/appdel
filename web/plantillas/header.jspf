@@ -3,6 +3,7 @@
         <h3 class="muted">Ayacucho Seguro</h3>
         <div class="content_registrar_incidente"> 
             <a href="admin/login_user.jsp" class="btn btn-primary">Registrar un incidente</a>
+            <a href="admin/nuevo_usuario.jsp" class="btn btn-primary">Registrarse</a>
         </div>
         <div class="navbar navbar-inverse">
             <div class="navbar-inner">

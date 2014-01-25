@@ -11,11 +11,11 @@
         <link rel="stylesheet" href="lib/jquery-ui.css" />
         <link rel="stylesheet" href="lib/jquery.ptTimeSelect.css" />
 
-  
+
         <link rel="stylesheet" href="css/MarkerCluster.css" />
         <link rel="stylesheet" href="css/MarkerCluster.Default.css" />     
         <script src="css/leaflet.markercluster.js"></script>
-        
+
         <jsp:include page="plantillas/styles.jspf"></jsp:include>
             <link href='css/style-index.css' rel='stylesheet' />            
 
@@ -44,8 +44,9 @@
                         <input type="text" name="fecha" value=""  id="fecha_fin" style="width: 150px" readonly>
                     </div>
                 </div>
-                <div class="row">                    
-                    <div class="span12"> <button type="submit" class="btn btn-primary" id="button_filtrar">  Filtrar</button></div>
+                <div class="row-fluid">                    
+                    <div class="span6"> <button type="submit" class="btn btn-primary" id="button_filtrar">  Filtrar</button></div>
+                    <div class="span6"> <button type="submit" class="btn btn-primary" id="button_todos">Todos</button></div>
 
                 </div>
             </div>

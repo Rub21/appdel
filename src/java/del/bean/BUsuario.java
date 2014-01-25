@@ -12,12 +12,21 @@ public class BUsuario {
 
     String idusuario;
     String nombre;
+    String apellidos;
     String Correo;
     String usuario;
     String contrasenia;
     boolean estado;
     String rol;
     int num_ent;
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
 
     public String getRol() {
         return rol;

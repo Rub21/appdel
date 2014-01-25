@@ -9,12 +9,13 @@
  );
 
 ALTER TABLE usuario ADD rol VARCHAR(2);
+ALTER TABLE usuario ADD correo VARCHAR(50);
 
-INSERT INTO usuario(idusuario, nombre, apellidos, usuario, contrasenia, estado,rol)
-    VALUES ('1u','Leydi Rosmery','Maldonado C.','Ley','1234',true,'RA');
+INSERT INTO usuario(idusuario, nombre, apellidos, usuario, contrasenia, estado,rol,correo)
+    VALUES ('1u','Leydi Rosmery','Maldonado C.','Ley','1234',true,'RA', 'ley@gmail.com');
 
-INSERT INTO usuario(idusuario, nombre, apellidos, usuario, contrasenia, estado,rol)
-    VALUES ('2u','Anderson','Espino Alvites','And','123',true,'R-');    
+INSERT INTO usuario(idusuario, nombre, apellidos, usuario, contrasenia, estado,rol,correo)
+    VALUES ('2u','Anderson','Espino Alvites','And','123',true,'R-', 'and@hotmail.com');    
 
 select * from usuario;
 

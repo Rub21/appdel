@@ -112,6 +112,11 @@ $(document).on('ready', function() {
         });
     });
 
+$('#button_todos').click(function(){
+     map.markerLayer.setFilter(function(f) {
+            return true;
+        });
+});
 
 });
 
