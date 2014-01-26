@@ -3,8 +3,6 @@ function fun_detalle(id) {
 //habilitar botones
     $('#button_submit').prop("disabled", false);
     $('#mensaje_alert').empty();
-
-
     //da Formato al la ventana
     $('.click').trigger('click');
     $('#popover').css({
@@ -29,8 +27,6 @@ function fun_detalle(id) {
 
     });
 
-
-
     $('.tipo').empty();
     $('.fecha').empty();
     $('.hora').empty();
@@ -51,15 +47,11 @@ function fun_detalle(id) {
 
     if (check_null(crimen.properties.imagen)) {
         $('.imagen').css('display', 'block');
-        $('.imagen').attr("src", "crimen_imagenes/" + crimen.properties.imagen);
+        $('.imagen').attr("src", "../crimen_imagenes/" + crimen.properties.imagen);
     } else {
 
         $('.imagen').css('display', 'none');
     }
-
-
-
-
 
 }
 ;
@@ -71,8 +63,6 @@ function  get_date(timestamp) {
     return d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
 }
 
-
-
 function check_null(k) {
     if (k.replace(/\s/g, "") + String.fromCharCode(160) !== String.fromCharCode(160)) {
         return true;
@@ -81,7 +71,6 @@ function check_null(k) {
     }
 }
 ;
-
 
 $(function() {
     $('#button_submit').click(function(e) {
@@ -143,8 +132,5 @@ function filtrar_eliminados(id_incidente) {
         }
 
     });
-
-
-
 
 }

@@ -115,9 +115,8 @@
         <script src="lib/jquery-1.8.2.js"></script>
         <script src="lib/bootstrap.min.js"></script>
         <script src="lib/underscore-min.js"></script>
-
+        <script src="js/mapa.js"></script>
         <script src="js/detalle.js"></script>
-
         <script src="js/app_incidentes_pvigilancia.js"></script>
 
     </body>

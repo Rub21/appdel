@@ -5,18 +5,11 @@
         <meta charset="utf-8">
         <title>Incidentes VS Puntos Criticos</title>
 
-        <link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.css' rel='stylesheet' />
-        <script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.js'></script>
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-          <script src="../assets/js/html5shiv.js"></script>
-        <![endif]-->
+        <link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.css' rel='stylesheet' />       
+
         <link rel="stylesheet" href="css/MarkerCluster.css" />
-        <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
-        <!--[if lte IE 8]>
-          <link rel="stylesheet" href="css/MarkerCluster.Default.ie.css" />
-        <![endif]-->
-        <script src="css/leaflet.markercluster.js"></script>
+        <link rel="stylesheet" href="css/MarkerCluster.Default.css" />   
+
 
         <jsp:include page="plantillas/styles.jspf"></jsp:include>
             <link href='css/style-index.css' rel='stylesheet' />            
@@ -108,16 +101,14 @@
         <div class="footer">
 
         </div>
-
-
-
-
+        
+        <script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.js'></script>
+        <script src="css/leaflet.markercluster.js"></script>
         <script src="lib/jquery-1.8.2.js"></script>
         <script src="lib/bootstrap.min.js"></script>
         <script src="lib/underscore-min.js"></script>
-
+        <script src="js/mapa.js"></script>
         <script src="js/detalle.js"></script>
-
         <script src="js/app_incidentes_pcriticos.js"></script>
 
     </body>

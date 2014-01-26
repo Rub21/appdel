@@ -1,9 +1,3 @@
-<%-- 
-    Document   : poligon21
-    Created on : Dec 7, 2013, 9:28:00 AM
-    Author     : ruben
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -55,11 +49,8 @@
         <jsp:include page="plantillas/header.jspf"></jsp:include>
         <div id="map"></div>
         <div class="footer">
-
         </div>
-
-
-
+        <script src="js/mapa.js"></script>
         <script src="lib/leaflet.js"></script>
         <script src="lib/underscore-min.js"></script>   
         <script type="text/javascript" src="https://dl.dropboxusercontent.com/u/43116811/ruben/grid_ayac.js"></script>
@@ -76,7 +67,7 @@
 
             var map = L.map('map').setView([-13.1548, -74.2044], 15);
 
-            L.tileLayer('http://{s}.tiles.mapbox.com/v3/ruben.mapa_seguridadciudadana/{z}/{x}/{y}.png').addTo(map);
+            L.tileLayer('http://{s}.tiles.mapbox.com/v3/' + ruben + 'seguridadciudadana/{z}/{x}/{y}.png').addTo(map);
             //  L.geoJson(statesData).addTo(map);
 
 

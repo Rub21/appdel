@@ -1,8 +1,4 @@
-<%-- 
-    Document   : confirmacion
-    Created on : Oct 23, 2013, 5:16:36 PM
-    Author     : ruben
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

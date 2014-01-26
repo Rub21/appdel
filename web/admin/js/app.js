@@ -1,7 +1,7 @@
 // initialize the map on the "map" div
 var map = new L.Map('map');
 
-var cloudmade = new L.TileLayer('http://a.tiles.mapbox.com/v3/ruben.mapa_seguridadciudadana/{z}/{x}/{y}.png', {
+var cloudmade = new L.TileLayer(tilelayer, {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>', minZoom: 14, maxZoom: 19
 });
 // add the CloudMade layer to the map set the view to a given center and zoom

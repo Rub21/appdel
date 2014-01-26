@@ -1,12 +1,7 @@
-var map = L.mapbox.map('map', 'ruben.mapa_seguridadciudadana')
-        .setView([-13.1624, -74.2159], 15);
+//optiene de los datos de cabecera los datos
 
-var myIcon = L.icon({
-    iconUrl: 'https://dl.dropboxusercontent.com/u/43116811/ruben/accidentex20.png',
-    iconSize: [20, 20]
-});
 
-var url_data = 'http://localhost:8080/appdel/SObtener_crimen_administrar';
+url_data = url_data +'SObtener_crimen_administrar';
 var crimenes = {
     "type": "FeatureCollection",
     "features": []

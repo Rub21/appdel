@@ -130,15 +130,15 @@
 
         </div>
 
-
-
+        
         <script src="lib/jquery-1.8.2.js"></script>
         <script src="lib/jquery-ui.js"></script>
-        <script  src="lib/jquery.ptTimeSelect.js"></script>
-
+        <script src="lib/jquery.ptTimeSelect.js"></script>
         <script src="lib/bootstrap.min.js"></script>
         <script src="lib/underscore-min.js"></script>
         <script src="lib/moment.min.js"></script>
+        
+        <script src="js/mapa.js"></script>
         <script src="js/detalle.js"></script>
         <script src="js/app.js"></script>
 

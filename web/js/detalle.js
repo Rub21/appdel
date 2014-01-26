@@ -1,8 +1,5 @@
-
 function fun_detalle(id) {
-    //alert(id);
-
-    //da Formato al la ventana
+    //dar Formato al la ventana
     $('.click').trigger('click');
     $('#popover').css({
         'width': '700px',
@@ -11,23 +8,14 @@ function fun_detalle(id) {
             return -($(this).width() / 2);
         }
     });
-
-
 //Busca el crimen selecionado
     var crimen;
     console.log(crimenes)
     _.each(crimenes.features, function(value, key) {
-        
-          //console.log(crimenes.features[key].properties)
         if (crimenes.features[key].properties.idcrimen === id) {
             crimen = crimenes.features[key];
-              console.log(crimen)
         }
-      
     });
-
-
-
     $('.tipo').empty();
     $('.fecha').empty();
     $('.hora').empty();
@@ -36,44 +24,26 @@ function fun_detalle(id) {
     $('.direccion_ref').empty();
     $('.imagen').css('display', 'none');
     $('.imagen').empty();
-
-
     $('.tipo').text(crimen.properties.tipo);
     $('.fecha').text(get_date(crimen.properties.fecha));
     $('.hora').text(crimen.properties.hora);
     $('.usuario').text(crimen.properties.usuario);
     $('.descripcion').text(crimen.properties.descripcion);
     $('.direccion_ref').text(crimen.properties.direccion_ref);
-
     if (check_null(crimen.properties.imagen)) {
         $('.imagen').css('display', 'block');
         $('.imagen').attr("src", "crimen_imagenes/" + crimen.properties.imagen);
     } else {
-
         $('.imagen').css('display', 'none');
     }
-
-
-
-
-
 }
 ;
 
-
 function  get_date(timestamp) {
     var d = new Date(timestamp);
-    /*  console.log(d.getTime())
-     var months = [
-     'Jan', 'Feb', 'Mar', 'Apr',
-     'May', 'Jun', 'Jul', 'Aug',
-     'Sept', 'Oct', 'Nov', 'Dec'
-     ];*/
     var d = new Date(d + '');
     return d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
 }
-
-
 
 function check_null(k) {
     if (k.replace(/\s/g, "") + String.fromCharCode(160) !== String.fromCharCode(160)) {

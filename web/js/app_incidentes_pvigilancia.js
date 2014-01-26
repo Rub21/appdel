@@ -1,34 +1,27 @@
-var map = L.mapbox.map('map', 'ruben.mapa_seguridadciudadana')
+/*var map = L.mapbox.map('map', ruben + id)
         .setView([-13.1624, -74.2159], 15);
 
 var markers = new L.MarkerClusterGroup();
 
-
 var myIcon = L.icon({
-    iconUrl: 'https://dl.dropboxusercontent.com/u/43116811/ruben/accidentex20.png',
+    iconUrl: icono_in,
     iconSize: [20, 20]
-            /*  iconAnchor: [22, 94],
-             popupAnchor: [-3, -76],
-             shadowUrl: 'my-icon-shadow.png',
-             shadowRetinaUrl: '[email blocked]',
-             shadowSize: [68, 95],
-             shadowAnchor: [22, 94]*/
 });
 
 var myIcon_pv = L.icon({
-    iconUrl: 'http://a.tiles.mapbox.com/v3/marker/pin-l-police+44619D.png',
+    iconUrl: icono_pv,
     iconSize: [35, 90],
     iconAnchor: [22, 94],
-    popupAnchor: [-3, -80],
-    //shadowUrl: 'my-icon-shadow.png',
-    //shadowRetinaUrl: '[email blocked]',
-    //shadowSize: [68, 95],
-    //shadowAnchor: [22, 150]
+    popupAnchor: [-3, -80]
+            //shadowUrl: 'my-icon-shadow.png',
+            //shadowRetinaUrl: '[email blocked]',
+            //shadowSize: [68, 95],
+            //shadowAnchor: [22, 150]
 });
+*/
 
 
-
-var url_data = 'http://localhost:8080/appdel/SObtener_crimenes';
+url_data = url_data + 'SObtener_crimenes';
 var crimenes = {
     "type": "FeatureCollection",
     "features": []
@@ -71,44 +64,26 @@ $.getJSON(url_data, {
         };
         crimenes.features.push(d);
     });
-
     map.markerLayer.setGeoJSON(crimenes);
-
 });
-
 
 var geoJson = {
     type: 'FeatureCollection',
     features: []
 };
-
-
 for (var i = 0; i < puntos_vigilancia.length; i++) {
-
-    //console.log(crimenes[i]);
-
     var idcrimen = puntos_vigilancia[i].idcrimen;
     var title = puntos_vigilancia[i].tipo;
-
     idpc = puntos_vigilancia[i].idpc;
     tipo = puntos_vigilancia[i].tipo;
     direccion_ref = puntos_vigilancia[i].direccion_ref;
     descripcion = puntos_vigilancia[i].descripcion;
-
     var marker = L.marker(new L.LatLng(puntos_vigilancia[i].latitud, puntos_vigilancia[i].longitud), {
         icon: myIcon_pv
-
-
     });
-
     marker.bindPopup("<h2>" + tipo + "</h2><p>" + descripcion + "</p>");
-
     map.addLayer(marker);
 }
-
-
 $(document).on('ready', function() {
-
-
 });
 

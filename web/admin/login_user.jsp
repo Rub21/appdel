@@ -1,8 +1,4 @@
-<%-- 
-    Document   : login_user
-    Created on : Oct 12, 2013, 10:57:52 AM
-    Author     : ruben
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

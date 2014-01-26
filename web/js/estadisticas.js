@@ -1,26 +1,16 @@
 google.load("visualization", "1", {
     packages: ["corechart"]
 });
-
-
 function  dibujar_meses(f) {
-    //console.log(f);
-
     var rowArray = [];
     for (var i = 0; i < f.length; i++) {
         console.log(f[i].mes);
         console.log(f[i].cantidad);
         rowArray.push([f[i].mes, f[i].cantidad]);
-
     }
     ;
-    //console.log(rowArray);
-
     drawChart();
-
     function drawChart() {
-
-
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Mes');
         data.addColumn('number', 'Num puntos');
@@ -65,22 +55,17 @@ function  dibujar_meses(f) {
 
 
 function  dibujar_crimen(f) {
-
     console.log(f);
     var rowArray = [];
     for (var i = 0; i < f.length; i++) {
-
         rowArray.push([f[i].tipo, f[i].inc_total]);
 
     }
     ;
-    //console.log(rowArray);
 
     drawChart();
 
     function drawChart() {
-
-
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Incidente');
         data.addColumn('number', 'Num puntos');
@@ -122,9 +107,6 @@ function  dibujar_crimen(f) {
     }
 }
 ;
-
-
-
 function  dibujar_tipo_incidente(f) {
 
     fmeses = f.meses;
@@ -138,13 +120,9 @@ function  dibujar_tipo_incidente(f) {
 
     }
     ;
-    //console.log(rowArray);
-
     drawChart();
 
     function drawChart() {
-
-
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Mes');
         data.addColumn('number', 'Num puntos');
@@ -189,20 +167,12 @@ function  dibujar_tipo_incidente(f) {
 $(document).on('ready', function() {
     dibujar_meses(cif_mes.cifras_mes);
     dibujar_crimen(cif_crimen.cifras_crimen);
-
     dibujar_tipo_incidente(cifras_robo);
-
-//tipo_incidente
-
-//cifras_agresion
-
     $('#tipo').click(function() {
         var tipo = $('#tipo').val();
         console.log(tipo)
         if (tipo === 'robo') {
-
             dibujar_tipo_incidente(cifras_robo);
-
         } else if (tipo === 'agresion') {
             dibujar_tipo_incidente(cifras_agresion);
 
@@ -213,12 +183,7 @@ $(document).on('ready', function() {
         }else if(tipo==="otros"){
             dibujar_tipo_incidente(cifras_otros_incidentes);
         }
-
-
-
     });
-
-
 });
 
 

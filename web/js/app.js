@@ -1,16 +1,8 @@
-var map = L.mapbox.map('map', 'ruben.mapa_seguridadciudadana')
-        .setView([-13.1624, -74.2159], 15);
-
-var myIcon = L.icon({
-    iconUrl: 'https://dl.dropboxusercontent.com/u/43116811/ruben/accidentex20.png',
-    iconSize: [20, 20]
-});
-var url_data = 'http://localhost:8080/appdel/SObtener_crimenes';
+url_data = url_data + 'SObtener_crimenes';
 var crimenes = {
     "type": "FeatureCollection",
     "features": []
 };
-
 $.getJSON(url_data, {
     format: "json"
 }).done(function(data) {
@@ -49,9 +41,7 @@ $.getJSON(url_data, {
         };
         crimenes.features.push(d);
     });
-
     map.markerLayer.setGeoJSON(crimenes);
-
 });
 
 $(document).on('ready', function() {
@@ -83,9 +73,6 @@ $(document).on('ready', function() {
         monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
         navigationAsDateFormat: true,
     });
-
-
-
 //filtrar
     $('#button_filtrar').click(function() {
         var fecha_inicio = $('#fecha_inicio').val().split('/');
@@ -104,7 +91,6 @@ $(document).on('ready', function() {
         }
     });
 
-
     $('#tipo_incidentes li a').click(function() {
         var id = this.id;
         map.markerLayer.setFilter(function(f) {
@@ -112,11 +98,11 @@ $(document).on('ready', function() {
         });
     });
 
-$('#button_todos').click(function(){
-     map.markerLayer.setFilter(function(f) {
+    $('#button_todos').click(function() {
+        map.markerLayer.setFilter(function(f) {
             return true;
         });
-});
+    });
 
 });
 

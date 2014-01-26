@@ -148,7 +148,7 @@
         <script src="../lib/moment.min.js"></script>
 
 
-
+         <script src="../js/mapa.js"></script>
         <script src="js/detalle_admin_incidente.js"></script>
         <script src="js/app_admin_incidente.js"></script>
 

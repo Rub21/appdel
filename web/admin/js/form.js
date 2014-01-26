@@ -27,24 +27,5 @@ $(function() {
 
 
 function Valida(formulario) {
-    //Selected the list and renplace wit "_"
-  /*  var typeincidente = $('#entry_0 option:selected').text().replace(/\s/g, "_");
-    var getdate = $('#entry_1').val().split("/");
-
-    if ($("#entry_1").val().length == 0) {
-        alert("Ingrese la Fecha del Incidente");
-        return false;
-    } else if ($("#entry_4").val().length == 0) {
-        alert("Ingrese la Descripcion del Incidente ");
-        return false;
-    } else {
-        $("#entry_7").attr('value', typeincidente + getdate[0]);
-        $("#entry_8").attr('value', typeincidente + getdate[1]);
-        $("#entry_9").attr('value', typeincidente + getdate[2]);
-        $("#entry_10").attr('value', getdate[0]);
-        $("#entry_11").attr('value', getdate[1]);
-        $("#entry_12").attr('value', getdate[2]);
-        return true;
-    }*/
 
 }
