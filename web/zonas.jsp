@@ -66,6 +66,8 @@
 
 
             var map = L.map('map').setView([-13.1548, -74.2044], 15);
+            map.options.maxZoom = 19;
+            map.options.minZoom = 14;
 
             L.tileLayer('http://{s}.tiles.mapbox.com/v3/' + ruben + 'seguridadciudadana/{z}/{x}/{y}.png').addTo(map);
             //  L.geoJson(statesData).addTo(map);
