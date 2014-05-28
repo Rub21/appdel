@@ -118,7 +118,7 @@
 
 <!--librerias para localizarme-->
 <script type="text/javascript" src="../lib/location/L.Control.Locate.js"></script>
-
+<script type="text/javascript" src="js/global.js"></script>
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/form.js"></script>
 

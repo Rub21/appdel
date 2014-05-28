@@ -103,21 +103,30 @@ public class SRegistrar extends HttpServlet {
         //clases for upload images
         upBean = new UploadBean();
         String direccion = request.getSession().getServletContext().getRealPath("crimen_imagenes");
+
         upBean.setFolderstore(direccion);
         java.text.SimpleDateFormat formato = new java.text.SimpleDateFormat("yyMMddHHmmss");//fecha        
         Hashtable files = mrequest.getFiles();
         String archivo = ((UploadFile) mrequest.getFiles().get("imagen")).getFileName();
-        int posicionPunto = archivo.indexOf(".");
-        String nombreImagen = archivo.substring(0, posicionPunto);
-        nombreImagen = nombreImagen + formato.format(new java.util.Date());
-        String extension = archivo.substring(posicionPunto);
-        nombreImagen = nombreImagen.replaceAll("\\s", "") + extension;
 
-        ((UploadFile) mrequest.getFiles().get("imagen")).setFileName(nombreImagen);
-        UploadFile file = (UploadFile) files.get("imagen");
-        upBean.store(mrequest, "imagen");
+        System.out.println("***************************************************************");
+        System.out.println(archivo);
+        if (archivo != null) {
+            int posicionPunto = archivo.indexOf(".");
+            String nombreImagen = archivo.substring(0, posicionPunto);
+            nombreImagen = nombreImagen + formato.format(new java.util.Date());
+            String extension = archivo.substring(posicionPunto);
+            nombreImagen = nombreImagen.replaceAll("\\s", "") + extension;
 
-        bCrimen.setImagen(nombreImagen);
+            ((UploadFile) mrequest.getFiles().get("imagen")).setFileName(nombreImagen);
+            UploadFile file = (UploadFile) files.get("imagen");
+            upBean.store(mrequest, "imagen");
+
+            bCrimen.setImagen(nombreImagen);
+        } else {
+
+            bCrimen.setImagen("no-img");
+        }
 
         managerCrimen.registrar(bCrimen);
         response.sendRedirect("admin/confirmacion.jsp");

@@ -47,7 +47,7 @@ public class DAOCrimen {
             System.out.println("SQ=======================:" + sql);
             pstmt = cn.prepareStatement(sql);
             pstmt.executeUpdate();
-            pstmt.executeQuery();
+           // pstmt.executeQuery();
             cn.commit();
         } catch (SQLException ex) {
             Logger.getLogger(DAOCrimen.class.getName()).log(Level.SEVERE, null, ex);

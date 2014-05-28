@@ -45,7 +45,7 @@ function fun_detalle(id) {
     $('.descripcion').text(crimen.properties.descripcion);
     $('.direccion_ref').text(crimen.properties.direccion_ref);
 
-    if (check_null(crimen.properties.imagen)) {
+    if (crimen.properties.imagen !== 'no-img') {
         $('.imagen').css('display', 'block');
         $('.imagen').attr("src", "../crimen_imagenes/" + crimen.properties.imagen);
     } else {
