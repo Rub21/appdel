@@ -1,1 +1,27 @@
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('0 1=\'1.K\';0 e=\'F\';0 I=\'5://P:R/w/\';0 g=\'5://a.d.7.2/h/i/j-l-G+H.4\';0 c=\'M://N.O.2/u/S/1/Q.4\';0 s=\'5://a.d.7.2/h/i/j-l-t+v.4\';0 6=L.7.6(\'6\',1+e).y([-z.A,-B.C],D);0 E=L.8({9:c,b:[k,k]});0 J=L.8({9:s,b:[m,n],o:[p,q],r:[-3,-f]});0 x=L.8({9:g,b:[m,n],o:[p,q],r:[-3,-f]});',55,55,'var|ruben|com||png|http|map|mapbox|icon|iconUrl||iconSize|icono_in|tiles|id|80|icono_pc|v3|marker|pin|20||35|90|iconAnchor|22|94|popupAnchor|icono_pv|police||44619D|appdel|myIcon_pc|setView|13|1624|74|2159|15|myIcon|seguridadciudadana|danger|FFFF00|url_data|myIcon_pv|mapa_||https|dl|dropboxusercontent|localhost|accidentex20|8080|43116811'.split('|'),0,{}))
+var ruben = 'ruben.mapa_';
+var id = 'seguridadciudadana';
+var url_data = 'http://localhost:8080/appdel/';
+var icono_pc = 'http://a.tiles.mapbox.com/v3/marker/pin-l-danger+FFFF00.png';
+var icono_in = 'https://dl.dropboxusercontent.com/u/43116811/ruben/accidentex20.png';
+var icono_pv = 'http://a.tiles.mapbox.com/v3/marker/pin-l-police+44619D.png';
+
+var map = L.mapbox.map('map', ruben + id)
+        .setView([-13.1624, -74.2159], 15);
+
+var myIcon = L.icon({
+    iconUrl: icono_in,
+    iconSize: [20, 20]
+});
+var myIcon_pv = L.icon({
+    iconUrl: icono_pv,
+    iconSize: [35, 90],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -80]
+});
+
+var myIcon_pc = L.icon({
+    iconUrl: icono_pc,
+    iconSize: [35, 90],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -80]
+});
