@@ -53,7 +53,7 @@
         <script src="js/mapa.js"></script>
         <script src="lib/leaflet.js"></script>
         <script src="lib/underscore-min.js"></script>   
-        <script type="text/javascript" src="https://dl.dropboxusercontent.com/u/43116811/ruben/grid_ayac.js"></script>
+        <script type="text/javascript" src="js/grid_ayac.js"></script>
         <script type="text/javascript" src="http://localhost:8080/appdel/SObtener_densidad"></script>
 
         <script type="text/javascript">
