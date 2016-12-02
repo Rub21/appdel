@@ -1,0 +1,22 @@
+<div id="cabecera">
+    <div class="masthead">
+        <h3 class="muted">Ayacucho Seguro</h3>
+        <div class="content_registrar_incidente"> 
+            <a href="admin/login_user.jsp" class="btn btn-primary">Registrar un incidente</a>
+            <a href="admin/nuevo_usuario.jsp" class="btn btn-primary">Registrarse</a>
+        </div>
+        <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+                <div class="container">
+                    <ul class="nav">
+                        <li class="active"><a href="index.jsp">Incidentes</a></li>
+                        <li><a href="zonas.jsp">Zonas </a></li>
+                        <li><a href="estadisticas.jsp">Estadisticas</a></li>
+                        <li><a href="incidentes_pcriticos.jsp">Incidentes Vs Puntos criticos</a></li>
+                        <li><a href="incidentes_pvigilancia.jsp">Incidentes Vs Puntos Vigilancia</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- /.navbar -->
+    </div>
+</div>
